@@ -1,0 +1,26 @@
+<p>toolpadをご利用頂きありがとうございます。</p>>
+
+<p>パスワードの回数制限を超えたため、ロックがかかりました。</p>
+
+<p>ロックの解除のためには以下のリンクをクリックしてください</p>
+
+<!-- <p>Your account has been locked due to an excessive number of unsuccessful sign in attempts.</p>
+
+<p>Click the link below to unlock your account:</p> -->
+
+<p><%= link_to 'ロックの解除', unlock_url(@resource, unlock_token: @token) %></p>
+
+<p>このメールは送信先のメールアドレス宛てに自動で送信されています。<br>
+送信専用メールアドレスから送っておりますので、<br>
+直接ご返信いただいてもお返事ができません。あらかじめご了承ください。<br>
+
+万が一、このメールにお心当たりの無い場合は、<br>
+どなたかがメールアドレスを間違って入力してしまった可能性があります。<br>
+恐れ入りますが、以下の問合せ先までお知らせをお願いいたします。<br>
+
+なお、何かご不明な点や、お困りのことがございましたら、以下のメールアドレスへお気軽にご連絡ください。<br>
+
+toolpad123@gmail.com
+
+
+</p></p>
