@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  disease: 1
+  activity: 1
+  post_image_id: 1
+  copy: MyString
+  tip: MyString
+  user_id: 1
+  deleted_at: false
+
+two:
+  title: MyString
+  disease: 1
+  activity: 1
+  post_image_id: 1
+  copy: MyString
+  tip: MyString
+  user_id: 1
+  deleted_at: false

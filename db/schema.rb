@@ -10,7 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_023326) do
+ActiveRecord::Schema.define(version: 2019_03_05_103033) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string "comment_image_id"
+    t.text "comment"
+    t.integer "user_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "materials", force: :cascade do |t|
+    t.string "material"
+    t.string "amount"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.integer "disease"
+    t.integer "activity"
+    t.string "post_image_id"
+    t.string "copy"
+    t.string "tip"
+    t.integer "user_id"
+    t.boolean "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "recipe_image_id"
+    t.text "recipe"
+    t.integer "recipe_number"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
