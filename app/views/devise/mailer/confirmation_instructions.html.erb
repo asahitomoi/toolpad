@@ -1,5 +1,22 @@
-<p>Welcome <%= @email %>!</p>
+<p>toolpadをご利用頂きありがとうございます。<br>
+　　
+　　以下のリンクをクリックすることで、本登録されます。<br>
 
-<p>You can confirm your account email through the link below:</p>
+　　<%= link_to '本登録へ進む', confirmation_url(@resource, confirmation_token: @token) %><br>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+
+このメールは送信先のメールアドレス宛てに自動で送信されています。<br>
+送信専用メールアドレスから送っておりますので、<br>
+直接ご返信いただいてもお返事ができません。あらかじめご了承ください。<br>
+
+万が一、このメールにお心当たりの無い場合は、<br>
+どなたかがメールアドレスを間違って入力してしまった可能性があります。<br>
+恐れ入りますが、以下の問合せ先までお知らせをお願いいたします。<br>
+
+なお、何かご不明な点や、お困りのことがございましたら、以下のメールアドレスへお気軽にご連絡ください。<br>
+
+toolpad123@gmail.com
+
+
+</p>
