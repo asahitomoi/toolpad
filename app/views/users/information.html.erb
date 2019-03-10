@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>お客様情報</h1>
+  <table class="table table-size">
+    <thead>
+    	<tr>
+    		<th>登録情報</th>
+    		<th>登録内容</th>
+    	</tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ニックネーム</td>
+            <td><%=@user.name%></td>
+        </tr>
+        <tr>
+            <td>写真</td>
+            <td>
+              <% if @user.user_image_id? %>
+            　　  <%= image_tag @user.user_image_id.thumb.url %>
+            　  <% else %>
+            　　  <%= image_tag 'nz.jpg' %>
+            　  <% end %>
+            </td>
+        </tr>
+        <tr>
+    	    <td>メールアドレス</td>
+    	    <td><%=@user.email%></td>
+        </tr>
+        <tr>
+        	<td>性別</td>
+        	<td><%=@user.gender%></td>
+        </tr>
+        <tr>
+        	<td>年代</td>
+        	<td><%=@user.age%></td>
+        </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-success" :style="marigin:0, auto"><%= link_to"内容を変更する", edit_user_path(@user.id)%></button>
+</div>

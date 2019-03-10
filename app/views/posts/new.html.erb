@@ -1,0 +1,45 @@
+<div class="container">
+	<h1>作り方を投稿する</h1>
+	<%= form_for(@post) do |f| %>
+		<div class="post_up">
+		 <%= f.label :title, "作品の題名" %><br>
+	     <%= f.text_field :title %><br>
+	        <div class="post_left">
+	             <%= f.label :post_image_id, "作品の写真" %><br>
+	             <%= f.file_field :post_image_id %><br><!--
+	             <%#= f.input :disease, include_blank: false, input_html: {multiple: true, class: 'mySelect2'} %> -->
+	             <!--  <%#= f.collection_select :disease_id, Disease.all, :id, :disease, :prompt => "選択してください" %> -->
+	             <%#= select :disease, :tags, tags, { selected: selected_tags }, { multiple: true, name: 'disease[tags]', class: 'form-control js-searchable' } %><br>
+	             <%#= select :disease, { selected: selected_tags }, { multiple: true, name: 'disease[tags]', class: 'form-control js-searchable' } %><br>
+	        </div>
+	        <div class="post_right">
+	        	 <%= f.label :copy, "作品のキャッチコピー" %><br>
+	        	 <%= f.text_field :copy %><br>
+	           <div id="materials">
+	           	 <%= f.fields_for :materials do |material| %>
+	           	    <%= render 'material_fields', f: material %>
+	           	 <% end %>
+	               <div id="links">
+	                   <%= link_to_add_association "材料欄を追加する", f, :materials%><br>
+	               </div>
+	           </div>
+	        </div>
+	    <div class="post_down">
+	    	<div id="recipes">
+	           	 <%= f.fields_for :recipes do |recipe| %>
+	           	    <%= render 'recipe_fields', f: recipe %>
+	           	 <% end %>
+	               <div id="links">
+	                   <%= link_to_add_association "作り方欄を追加する", f, :recipes%><br>
+	               </div>
+	        </div>
+	        <div class="tip">
+	        	 <%= f.label :tip, "ポイント・エピソード・ひとこと" %><br>
+	             <%= f.text_field :tip %><br>
+	        </div>
+	    </div>
+	<%= f.submit "作品を投稿する", class:"btn btn-primary" %>
+
+
+    <% end %>
+</div>

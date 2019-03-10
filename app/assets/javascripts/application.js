@@ -16,3 +16,11 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+//= require cocoon
+//= require select2
+
+
+$('.js-searchable').select2({
+  width: 200,
+  allowClear: true
+});

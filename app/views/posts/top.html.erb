@@ -1,2 +1,48 @@
-<h1>Posts#top</h1>
-<p>Find me in app/views/posts/top.html.erb</p>
+
+<div class="sub-nav">
+	<ul class="top-list">
+		<li class="top-item"><%= link_to"はじめに", posts_introduction_path %></li>
+		<li class="top-item"><%= link_to"自助具とは", posts_selfhelp_path %></li>
+		<li class="top-item"><%= link_to"作品の一覧を見る", posts_index_path %></li>
+	</ul>
+</div>
+
+<div class="main-visual">
+	<%=image_tag 'tekapo.jpg', :width =>'100%' ,:height =>'300px'%>
+</div>
+
+<div class="container">
+	<div class="main-box clearfix">
+		<div class="top-main disease">
+			<h4>疾患から探す</h4>
+			　<ul>
+				<li>脳卒中</li>
+		        <li>骨折</li>
+				<li>脊髄損傷</li>
+				<li>神経変性疾患</li>
+				<li>心臓疾患</li>
+				<li>リウマチ</li>
+				<li>精神疾患</li>
+				<li>小児</li>
+				<li>その他</li>
+			</ul>
+		</div>
+	    <div class="top-main ">
+			<h4>生活動作から探す</h4>
+			　<ul>
+				<li>食事</li>
+		        <li>トイレ</li>
+				<li>身だしなみ</li>
+				<li>着替え</li>
+				<li>お風呂</li>
+				<li>移動</li>
+				<li>乗り移り動作</li>
+				<li>コミュニケーションなど</li>
+				<li>その他</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
