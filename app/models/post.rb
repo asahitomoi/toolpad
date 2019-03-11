@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
 	 mount_uploader :post_image_id, ImageUploader
+
 	 has_many :recipes, inverse_of: :post
 	 accepts_nested_attributes_for :recipes, reject_if: :all_blank, allow_destroy: true
 	 has_many :materials, inverse_of: :post
