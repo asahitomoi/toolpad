@@ -20,14 +20,33 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #6c6b6b;
+  color: #331a1a;
 }
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 header{
-	background-color: orange;
+	background-color: #fba810e6;
 	width: 100%;
 }
 
+.header_item a{
+	color:#331a1a;
+}
+
+body {
+	background-color: #FFFFDD;
+}
+
+
+.option_back {
+	width:250px;
+	height:30px;
+	background-color:#FFFFDD;
+}
+
+.option_back:hover    {
+    color: #331a1a;
+    background:#ccc;
+}

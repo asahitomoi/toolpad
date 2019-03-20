@@ -8,12 +8,23 @@ class UsersController < ApplicationController
 	end
 
 	def show
+		@user = User.find(params[:id])
+		@q = Post.ransack(params[:q])
+        # @posts = @q.result(distinct: true)
+        @posts = @user.posts
+        @favorites = @user.favorites_posts
 	end
 
 	def favorite
+		@q = Post.ransack(params[:q])
+        @posts = @q.result(distinct: true)
 	end
 
 	def post
+		@user = User.find(current_user.id)
+		@posts = @user.posts
+		@q = Post.ransack(params[:q])
+        @posts = @q.result(distinct: true)
 	end
 
 	def edit
@@ -28,6 +39,8 @@ class UsersController < ApplicationController
 
 	def destroy
 	end
+
+
 
 
 	private

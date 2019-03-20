@@ -1,0 +1,26 @@
+<div class="container admin-title admin-box">
+         <button type="button" data-toggle="modal" data-show="true" data-target="#modal-comment" class="btn btn-secondary btn-a">作品にコメントをする</button>
+
+                          <div class="modal fade" id="modal-comment" tabindex="-1" role="dialog" aria-labelledby="myModalOptionLabel">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="myModalOptionLabel">作品にコメントをする</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                   <%= form_for([@post, @comment]) do |f| %>
+                                      <div class="post_up">
+                                       <%= f.label :comment, "コメント" %><br>
+                                        <%= f.text_area :comment, placeholder: "コメントをここに" %><br>
+                                        <%= f.file_field :comment_image_id %><br>
+                                          </div>
+                                      <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+                                  　　 <% end %>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>

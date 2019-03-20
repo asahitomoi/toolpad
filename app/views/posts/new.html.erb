@@ -1,41 +1,157 @@
 <div class="container">
-	<h1>作り方を投稿する</h1>
+  <div class="post_cont">
+	<h1>作品を投稿する</h1>
 	<%= form_for(@post) do |f| %>
 		<div class="post_up">
+			<div class="post_sub">
 		 <%= f.label :title, "作品の題名" %><br>
-	     <%= f.text_field :title %><br>
+	     <%= f.text_field :title ,class: "title_field" %><br>
+	        </div>
 	        <div class="post_left">
-	             <%= f.label :post_image_id, "作品の写真" %><br>
-	             <%= f.file_field :post_image_id %><br><!--
-	             <%#= f.input :disease, include_blank: false, input_html: {multiple: true, class: 'mySelect2'} %> -->
-	             <!--  <%#= f.collection_select :disease_id, Disease.all, :id, :disease, :prompt => "選択してください" %> -->
-	             <%#= select :disease, :tags, tags, { selected: selected_tags }, { multiple: true, name: 'disease[tags]', class: 'form-control js-searchable' } %><br>
+	        	<div class="post_sub">
+	             <%= f.label :post_image_id, "作品の写真"  %><br>
+
+	             <%= f.file_field :post_image_id , class:"getphoto" %><br>
+	        </div>
+<!--
+<img src="" id="preview"> .photo_box: ドラッグできる範囲, #preview: 挿入する画像(この要素をjQueryで増やせば何個でも画像追加できる
+	<input type="file" id="getphoto"> -->
+<!--
+	             <%#= f.hidden_field :image_cache %> -->
+
+
+	             <%#= image_tag @post.post_image_id.url,  id = "preview" %>
+<!-- <script>
+  $(document).ready(function() {
+  $('.mySelect2').select2({
+    maximumSelectionLength: 3,
+	width: 300,
+    placeholder: 'This is my placeholder',
+    allowClear: true  # default: true
+    multiple: true
+  });
+});
+
+
+</script> -->
+<!--
+<%#= f.input :disease, include_blank: '選択して下さい', input_html: {class: 'mySelect2'} %>
+ -->
+<!--
+<%#= f.select :disease, include_blank: '選択して下さい', input_html: {class: 'mySelect2'} %> -->
+
+<!--セレクトタブは出る。複数とかjava関係ない  -->
+<div class="post_sub">
+<p><strong>対象となりやすい疾患</strong></p>
+<%= f.select :disease, Post.diseases.keys.to_a, {multiple: true, class: 'mySelect2'} %><br>
+</div>
+<div class="post_sub">
+<p><strong>使うときの状況</strong></p>
+<%= f.select :activity, Post.activities.keys.to_a, {multiple: true, class: 'mySelect2'} %><br>
+</div>
+
+
+<!-- そもそもdiseaseモデルはない
+<%#= f.collection_select :disease,include_blank: false, disease: {multiple: true, class: 'mySelect2'} %> -->
+
+
+<!--いけるけど、enumとかそういうの使ってない
+	             <script>
+    $(function () {
+        $('.select2-2').select2({
+            width: '200px',
+            placeholder: 'Please Select',
+            allowClear: true,
+            // このオプションは、複数選択モードを有効にします。
+            multiple: true
+        });
+    });
+</script>
+<select class="select2-2">
+    <option></option>
+    <optgroup label="Fruit">
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+        <option value="cherry">Cherry</option>
+        <option value="grape" selected>Grape</option>
+        <option value="lemon">Lemon</option>
+    </optgroup>
+    <optgroup label="Vegetable">
+        <option value="beans">Beans</option>
+        <option value="carrots">Carrots</option>
+        <option value="lettuce">Lettuce</option>
+        <option value="radish">Radish</option>
+        <option value="tomato">Tomato</option>
+    </optgroup>
+</select>
+
+ -->
+
+
+	            <!--  <%#= f.input :disease, include_blank: false, input_html: {multiple: true, class: 'mySelect2'} %>
+	             <%#= f.collection_select :disease_id, Disease.all, :id, :disease, :prompt => "選択してください" %>
+	             <%#= select :disease, :tags, tags, { selected: selected_tags }, { multiple: true, name: 'disease[tags]', class: 'form-control js-searchable' } %><br> -->
 	             <%#= select :disease, { selected: selected_tags }, { multiple: true, name: 'disease[tags]', class: 'form-control js-searchable' } %><br>
 	        </div>
 	        <div class="post_right">
-	        	 <%= f.label :copy, "作品のキャッチコピー" %><br>
-	        	 <%= f.text_field :copy %><br>
-	           <div id="materials">
+	        	<div class="post_sub">
+	        	 <%= f.label :copy, "作品のキャッチコピー"%><br>
+	        	 <%= f.text_field :copy ,class: "copy_field"%><br>
+	        	</div>
+	           <div class="materials post_sub">
+	           	<div class ="material_detail">
+	           		<strong>材料の入力</strong>
+	           	</div>
 	           	 <%= f.fields_for :materials do |material| %>
-	           	    <%= render 'material_fields', f: material %>
-	           	 <% end %>
+	           	 <div class="tr_material clearfix">
+	           	  <div class="td_material">
+	           	  	<%= material.label :material, "材料" ,class: "material_field"%>
+	           	  </div>
+	           	  <div class="td_material">
+	           	  	<%= material.label :amount, "必要な量" ,class: "material_field"%>
+            	  </div>
+	           	 <div class="tr_material clearfix">
+	           	  <div class="td_material">
+	           	  	<%= material.text_field :material, placeholder: " 例) 目玉クリップ",class: "material_field"%>
+	           	  </div>
+			      <div class="td_material">
+			      	<%= material.text_field :amount, placeholder: " 例) 2つ",class: "material_field"%>
+			      </div>
+			      </div>
+            	  <%= render 'material_fields', f: material %>
+	           	  <% end %>
+	           	</div>
 	               <div id="links">
-	                   <%= link_to_add_association "材料欄を追加する", f, :materials%><br>
+	                   <%= link_to_add_association "材料欄を追加する", f, :materials ,class: "btn-flat-simple"%><br>
 	               </div>
 	           </div>
+
+
 	        </div>
+	    </div>
 	    <div class="post_down">
-	    	<div id="recipes">
+	      <div class="post_sub">
+	    	<div class="recipe_detail">
+	    		<strong>作り方の入力</strong>
+	    	</div>
+	    	<div class="recipes clearfix">
 	           	 <%= f.fields_for :recipes do |recipe| %>
+	           <div class="recipe_cont">
+	           	  <%= recipe.label :recipe, "作り方" %><br>
+				  <%= recipe.text_area :recipe, placeholder: "作り方" ,class: "recipe_field"%><br>
+				  <%= recipe.label :recipe_image_id, "この工程の写真を載せる" %><br>
+				  <%= recipe.file_field :recipe_image_id,  class: 'file-field'%><br>
+			   </div>
 	           	    <%= render 'recipe_fields', f: recipe %>
 	           	 <% end %>
 	               <div id="links">
 	                   <%= link_to_add_association "作り方欄を追加する", f, :recipes%><br>
 	               </div>
 	        </div>
-	        <div class="tip">
+	      </div>
+	        <div class="tip post_sub">
 	        	 <%= f.label :tip, "ポイント・エピソード・ひとこと" %><br>
-	             <%= f.text_field :tip %><br>
+	             <%= f.text_field :tip ,class: "tip_field"%><br>
 	        </div>
 	    </div>
 	<%= f.submit "作品を投稿する", class:"btn btn-primary" %>
@@ -43,3 +159,34 @@
 
     <% end %>
 </div>
+</div>
+
+
+
+
+<!--
+<script>
+
+
+var file = document.querySelector('#getphoto');
+
+file.onchange = function (){ // 画像を選択したら発火
+	var fileList = file.files;
+	if (file.files[0] == null) {
+		document.querySelector('#preview').src = "";
+	} else {
+		//読み込み
+		var reader = new FileReader();
+		reader.readAsDataURL(fileList[0]);
+
+		//読み込み後
+		reader.onload = function  () {
+			document.querySelector('#preview').src = reader.result; // imgタグのsrc属性にurl指定
+			$('#preview').css("display", "inline-block");
+		};
+	};
+};
+
+
+
+</script> -->

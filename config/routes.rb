@@ -3,19 +3,28 @@ Rails.application.routes.draw do
   get 'posts/selfhelp'
   get 'posts/introduction'
   get 'posts/top'
-  get 'posts/index'
-  get 'posts/show'
+
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :posts
+  resources :posts do
+    resource :comments
+    resource :favorites, only: [:create, :destroy]
+  end
+
   resources :recipes
   resources :materials
   resources :users do
-    resource :favorites
-    resource :comments
+    # resources :favorites do
+    #   post "add", to: "favorite#create"
+    #end
     get 'information', to:'users#information'
+    get 'post', to:'users#post'
+    get 'favorite', to:'users#favorite'
   end
+
+  get 'search', to: 'posts#search', as: :search
+
 
 
 end

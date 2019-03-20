@@ -1,33 +1,15 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class ="container">
+<div class="row">
 
-
-
-
-<div class="container-fluid text-center">
-	<div>image</div>
-  <div class="row content">
-    <div class="col-sm-4  sidenav">
-      <p><a href="#">検索</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
+    <div class="col-lg-3">
+      <%= render 'layouts/search_form'%>
     </div>
-    <div class="col-sm-8 text-left">
-      <div class="post_box">
-       <% @post.each do |f| %>
-        <div class="post_image">
-          <%= image_tag f.post_image_id.url %>
-        </div>
-        <div class="post_title">
-          <%= f.title %>
-        </div>
-        <div class="post_copy">
-          <%= f.copy %>
-        </div>
-       <% end %>
-      </div>
+
+    <div class="col-lg-9">
+      <h1>みんなの作品</h1>
+      <%= render 'post', posts: @posts %>
     </div>
- 
+
 
   </div>
 </div>

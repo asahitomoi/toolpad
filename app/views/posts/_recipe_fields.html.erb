@@ -3,14 +3,22 @@
 
 <div class="nested-fields recipe">
    <!--  <%#= f.label :image, "写真を投稿する" %><br> -->
-    <%= button_tag 'browse', onclick: 'browsePicture(this);' %>
-    <%= f.file_field :recipe_image_id,  class: 'file-field',style:'display:none;'%><br>
+   <!--  <%#= button_tag 'browse', onclick: 'browsePicture(this);' %> -->
+    <%#= f.hidden_field :image_cache %>
    <!--  <%#= image_tag f.recipe_image_id.url, class: 'preview-field' %><br> -->
+
+  <div class="recipe_cont">
+
     <%= f.label :recipe, "作り方" %><br>
-    <%= f.text_field :recipe%><br>
+    <%= f.text_area :recipe, placeholder: "作り方" , class: "recipe_field"%><br>
+    <%= f.label :recipe_image_id, "この工程の写真を載せる" %><br>
+    <%= f.file_field :recipe_image_id,  class: 'file-field'%><br>
+
     <%= link_to_remove_association "作り方の項目を削除する", f %><br>
+  </div>
 
 
+</div>
 <!--
 
 

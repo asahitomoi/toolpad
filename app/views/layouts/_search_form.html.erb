@@ -1,0 +1,11 @@
+<%= render "layouts/search_disease" %>
+
+<%= render "layouts/search_activity" %>
+
+キーワードから探す
+<%= search_form_for(@q, url:search_path) do |f| %>
+<div class="form-group">
+          <%= f.search_field :title_cont, class: "form-control",placeholder:"キーワード検索" %>
+        </div>
+<%= f.submit%>
+<% end %>

@@ -69,3 +69,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
  gem 'rmagick'
  gem 'cocoon'
  gem 'select2-rails'
+ gem 'rails-i18n'
+ gem 'pry-rails'
+ gem 'ransack'
