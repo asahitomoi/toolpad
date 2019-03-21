@@ -8,12 +8,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :posts do
-    resource :comments
+    resource :comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
   end
 
-  resources :recipes
-  resources :materials
+  resources :recipes, only: [:create, :destroy]
+  resources :materials, only: [:create, :destroy]
   resources :users do
     # resources :favorites do
     #   post "add", to: "favorite#create"

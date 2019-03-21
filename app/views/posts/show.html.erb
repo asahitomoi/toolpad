@@ -1,6 +1,5 @@
 <div class="container">
   <div class="row">
-
     <div class="col-lg-3">
 	<%= render 'layouts/search_form'%>
     </div>
@@ -17,45 +16,20 @@
 	            　  <% end %>
 			</div>
 			<div class="top_right">
-
-   <!--  <%#= link_to "お気に入り",post_add_path(post),method: :post %>
- -->
-
- <div>
- 	<% if @post.favorited_by?(current_user)%>
+    <div>
+ 	<% if @post.user == current_user %>
+ 	 <%= link_to "この投稿を削除する",  post_path(@post), method: :delete %>
+ 	<% elsif @post.favorited_by?(current_user)%>
       <%= link_to "マイページの保存から外す",  post_favorites_path(@post), method: :delete%>
       <% else %>
       <%= link_to "投稿をマイページに保存する",  post_favorites_path(@post), method: :post %>
     <% end %>
       </div>
-
-
-<!--
-
-    <%#= form_for(favorites, url: {controller: favorites, action:create }) %>
-
- -->
-
-
-
-<!--
-				  <%#= form_for(user, :url => {:controller => :favorite, :action => :create}) do |f| %>
-                 <%#= f.submit "作品をマイページに保存する", class:"btn btn-primary btn-enter" %>
-                                <%# end %>
-
-
- -->
-
-
-
-
-
-
 			　　　<h2 class="copy">
 					<%= @post.copy %>
 				</h2>
 				<div class="maker">
-					作品を作った人：<%= @user.name %>さん
+					作品を作った人：<%= link_to user_path(@post.user_id) do %><%= @post.user.name %><% end %>さん
 				</div>
 				<div class="material mt-4">
 					 <table class="table">
@@ -118,8 +92,7 @@
 	    	</div>
 	    	<% end %>
         </div>
-<%# binding.pry %>
-<!-- コメントで２つの引数に渡すときは（）で囲む！ -->
+
       <%= render 'comment'%>
 　　　</div>
     </div>

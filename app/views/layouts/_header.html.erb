@@ -6,31 +6,31 @@
 <% if user_signed_in? %>
     <nav>
       <div class="slidemenu">
-        <ul class="nav navbar-nav navbar-right" data-hover="dropdown">
-           <li class="header_item"><%= link_to "マイページ", user_path(current_user.id), class:"glyphicon glyphicon-home home" %></li>
-           <li class="header_item"><%= link_to "作品を投稿する", new_post_path,  class:"glyphicon glyphicon-globe globe"  %></li>
-           <li class="header_item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"glyphicon glyphicon-log-out logout"  %></li>
+        <ul class="nav navbar-nav navbar-right">
+           <li id="header_item"><%= link_to "マイページ", user_path(current_user.id), class:"glyphicon glyphicon-home home" %></li>
+           <li id="header_item"><%= link_to "作品を投稿する", new_post_path,  class:"glyphicon glyphicon-globe globe"  %></li>
+           <li id="header_item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"glyphicon glyphicon-log-out logout"  %></li>
       </ul>
       </div>
     </nav>
 <% else %>
       <nav>
         <div class="slidemenu">
-          <ul class="nav navbar-nav navbar-right" data-hover="dropdown">
-           <li class="header_item"><%= link_to "新規会員登録",new_user_registration_path, class:"glyphicon glyphicon-edit sign_up" %></li>
-           <li class="header_item"><%= link_to "ログイン", new_user_session_path, class:"glyphicon glyphicon-log-in sign_in"  %></li>
+          <ul class="nav navbar-nav navbar-right">
+           <li id="header_item"><%= link_to "新規会員登録",new_user_registration_path, class:"glyphicon glyphicon-edit sign_up" %></li>
+           <li id="header_item"><%= link_to "ログイン", new_user_session_path, class:"glyphicon glyphicon-log-in sign_in"  %></li>
          </ul>
       </div>
     </nav>
    <% end %>
+   </header>
 
-    <nav class="top-nav">
-  <ul class="top-list">
+    <div class="top-nav">
+  <ul class="top-list clearfix">
     <li class="top-item"><%= link_to"TOPページ", root_path %></li>
     <li class="top-item"><%= link_to"はじめに", posts_introduction_path %></li>
     <li class="top-item"><%= link_to"自助具とは", posts_selfhelp_path %></li>
     <li class="top-item"><%= link_to"作品の一覧を見る", posts_path %></li>
   </ul>
-</nav>
 </div>
-</header>
+</div>

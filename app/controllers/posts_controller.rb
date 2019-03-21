@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @user = User.find(@post.user_id)
+    # @user = User.find(@post.user_id)
     @comment = Comment.new
     @q = Post.ransack(params[:q])
     @posts = @q.result(distinct: true)
@@ -33,11 +33,17 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @post.save
+    if @post.save
     redirect_to post_path(@post.id)
+    else
+    render :new
+    end
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
   def search

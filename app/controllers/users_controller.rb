@@ -10,9 +10,9 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@q = Post.ransack(params[:q])
-        # @posts = @q.result(distinct: true)
+        @posts = @q.result(distinct: true)
         @posts = @user.posts
-        @favorites = @user.favorites_posts
+        @favorites = @user.favorite_posts
 	end
 
 	def favorite
@@ -38,6 +38,9 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
+		@user = User.find(params[:id])
+        @user.destroy
+        redirect_to posts_path
 	end
 
 

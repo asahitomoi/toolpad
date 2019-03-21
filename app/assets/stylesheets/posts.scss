@@ -8,47 +8,6 @@
   clear: both;
 }
 
-.top-nav {
-	background-color: white;
-	height:50px;
-	width:100%;
-  text-align: center;
-  color: #331a1a;
-  font-weight: bold;
-  border-right: 1px solid #331a1a;
-}
-
-.top-list {
-  display: block;
-  text-align: center;
-  padding: 10px 0 5px 0;
-  margin: 0 auto;
-}
-
-.top-item {
-  list-style-type: disc;
-  list-style: none;
-  display: block;
-  width: 25%;
-  float: left;
-  text-align: center;
-  font-weight: bold;
-  border-right: 1px solid #331a1a;
-}
-
-.top-item a{
-  line-height: 30px;
-  color: #331a1a;
-  font-weight: bold;
-}
-
-.top-item a:hover {
-    color: #BA9057;
-    border-bottom: 3px solid #ba9057;
-    padding: 0 1em;
-    text-decoration: none;
-}
-
 .main-visual {
   width: 1100px;
   height: 300px;

@@ -49,8 +49,9 @@
 <p><strong>使うときの状況</strong></p>
 <%= f.select :activity, Post.activities.keys.to_a, {multiple: true, class: 'mySelect2'} %><br>
 </div>
-
-
+<!--
+<%#= f.collection_select :activity_id, Activity.all %>
+ -->
 <!-- そもそもdiseaseモデルはない
 <%#= f.collection_select :disease,include_blank: false, disease: {multiple: true, class: 'mySelect2'} %> -->
 
