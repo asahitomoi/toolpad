@@ -40,8 +40,9 @@ header{
     color: #948d8d;
     background-color: none;
 }
-.nav li a:hover{
-	background-color: #fba810e6;
+
+.navbar-nav > li > a:hover {
+    background-color: transparent;
 }
 
 a:hover {
@@ -103,4 +104,12 @@ body {
     border-bottom: 1px solid #ba9057;
     padding: 6px 16px;
     text-decoration: none;
+}
+
+.search_dis{
+	font-family: YuGothic;
+}
+
+.search_act{
+	font-family: YuGothic;
 }

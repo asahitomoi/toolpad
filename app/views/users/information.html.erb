@@ -1,4 +1,5 @@
 <div class="container">
+    <p class="notice"><%= notice %></p>
   <h1>お客様情報</h1>
   <table class="table table-size">
     <thead>
@@ -9,7 +10,7 @@
     </thead>
     <tbody>
         <tr>
-            <td>ニックネーム</td>
+            <td>名前</td>
             <td><%=@user.name%></td>
         </tr>
         <tr>
@@ -18,7 +19,7 @@
               <% if @user.user_image_id? %>
             　　  <%= image_tag @user.user_image_id.thumb.url %>
             　  <% else %>
-            　　  <%= image_tag 'nz.jpg' %>
+            　　  <%= image_tag 'noface.png' %>
             　  <% end %>
             </td>
         </tr>
@@ -36,5 +37,9 @@
         </tr>
     </tbody>
   </table>
-  <button type="button" class="btn btn-success" :style="marigin:0, auto"><%= link_to"内容を変更する", edit_user_path(@user.id)%></button>
+  <button type="button" class="btn btn-success"><%= link_to"内容を変更する", edit_user_path(@user.id)%></button>
+
+  <button type="button" class="btn btn-default"><%= link_to"会員登録をやめる", user_path(@user), method: :delete, data: { confirm: "会員登録をやめると投稿作品などは消えてしまいます。本当に削除しますか？" }%></button>
+
+
 </div>

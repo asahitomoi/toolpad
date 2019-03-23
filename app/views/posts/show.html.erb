@@ -17,19 +17,23 @@
 			</div>
 			<div class="top_right">
     <div>
- 	<% if @post.user == current_user %>
- 	 <%= link_to "この投稿を削除する",  post_path(@post), method: :delete %>
- 	<% elsif @post.favorited_by?(current_user)%>
-      <%= link_to "マイページの保存から外す",  post_favorites_path(@post), method: :delete%>
+    <% if user_signed_in? %>
+ 	  <% if @post.user == current_user %>
+ 	    <%= link_to "この投稿を削除する",  post_path(@post), method: :delete %>
+ 	  <% elsif @post.favorited_by?(current_user)%>
+        <%= link_to "マイページの保存から外す",  post_favorites_path(@post), method: :delete%>
       <% else %>
       <%= link_to "投稿をマイページに保存する",  post_favorites_path(@post), method: :post %>
+      <% end %>
+    <% else %>
+      <p>投稿を保存するには会員登録が必要です。会員登録は<%= link_to new_user_registration_path do %>こちら<% end %>から</p>
     <% end %>
       </div>
 			　　　<h2 class="copy">
 					<%= @post.copy %>
 				</h2>
 				<div class="maker">
-					作品を作った人：<%= link_to user_path(@post.user_id) do %><%= @post.user.name %><% end %>さん
+					作品の製作者：<%= link_to user_path(@post.user_id) do %><%= @post.user.name %><% end %>さん
 				</div>
 				<div class="material mt-4">
 					 <table class="table">
@@ -61,11 +65,12 @@
 				<div class="recipe_image">
 					<% if f.recipe_image_id? %>
 	            　　  <%= image_tag f.recipe_image_id.thumb150.url %>
-	            　  <% else %>
-	            　　  <%= image_tag 'nz.jpg' %>
+	            　  <%# else %>
+	            　　  <%#= image_tag 'nz.jpg' %>
 	            　  <% end %>
 				</div>
 				<div class="recipe_text">
+					<%= 1 + 1%>
 					<%= f.recipe %>
 				</div>
 			   </div>
@@ -92,8 +97,11 @@
 	    	</div>
 	    	<% end %>
         </div>
-
+    <% if user_signed_in? %>
       <%= render 'comment'%>
+    <% else %>
+       <p>コメントをするには会員登録が必要です。会員登録は<%= link_to new_user_registration_path do %>こちら<% end %>から</p>
+     <% end %>
 　　　</div>
     </div>
   </div>

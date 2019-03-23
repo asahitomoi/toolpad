@@ -1,7 +1,8 @@
 <header class= "header-fixed-top">
 <div class="container">
    <nav class="nav navbar-nav navbar-left">
-       <div class="image"><%=image_tag 'Logo2.png'%></div>
+       <div class="image"><%= link_to root_path do %>
+    <%=image_tag 'Logo2.png'%><% end %></div>
     </nav>
 <% if user_signed_in? %>
     <nav>

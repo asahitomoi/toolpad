@@ -18,11 +18,13 @@ class UsersController < ApplicationController
 	def favorite
 		@q = Post.ransack(params[:q])
         @posts = @q.result(distinct: true)
+        @favorites = @user.favorite_posts
 	end
 
 	def post
-		@user = User.find(current_user.id)
-		@posts = @user.posts
+		@user = current_user
+		# @user = User.find(current_user.id)
+		@post = @user.posts
 		@q = Post.ransack(params[:q])
         @posts = @q.result(distinct: true)
 	end
@@ -34,7 +36,7 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		@user.update(user_params)
-		redirect_to user_information_path(@user.id)
+		redirect_to user_information_path(@user.id), notice: "お客様情報を変更しました"
 	end
 
 	def destroy

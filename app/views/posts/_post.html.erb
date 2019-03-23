@@ -1,4 +1,4 @@
- <% posts.each do |f| %>
+<% posts.each do |f| %>
  <div class="post_box clearfix">
     <div class="post_image">
       <% if f.post_image_id? %>
@@ -13,11 +13,11 @@
       <h1 class="post_title">
         <%= link_to "#{f.title}",post_path(f.id), class: "p_title" %>
       </h1>
-        <% if f.user.name? %>
-          <%= f.user.name %>
+       <% if f.user.name? %>
+        製作者：<%= link_to user_path(f.user_id) do %><%= f.user.name %><% end %>さん
         <% else %>
-        <span>名前はまだない！</span>
-        <% end %>
+        <span>製作者：<%= link_to user_path(f.user_id) do %>名前はまだ未登録です<% end %></span>
+　　　　 <% end %>
       <h4 class="post_copy">
         <%= f.copy %>
       </h4>
