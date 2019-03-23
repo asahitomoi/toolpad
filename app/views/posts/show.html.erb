@@ -33,7 +33,15 @@
 					<%= @post.copy %>
 				</h2>
 				<div class="maker">
-					作品の製作者：<%= link_to user_path(@post.user_id) do %><%= @post.user.name %><% end %>さん
+					<p>作品の製作者：
+							<%= link_to user_path(@post.user_id) do %>
+							   <% if @post.user.name? %>
+							      <%= @post.user.name %>
+				            	<% else %>
+					               名前はまだ未登録です
+					            <% end %>
+		  			        <% end %>
+		  			</p>
 				</div>
 				<div class="material mt-4">
 					 <table class="table">
@@ -65,8 +73,6 @@
 				<div class="recipe_image">
 					<% if f.recipe_image_id? %>
 	            　　  <%= image_tag f.recipe_image_id.thumb150.url %>
-	            　  <%# else %>
-	            　　  <%#= image_tag 'nz.jpg' %>
 	            　  <% end %>
 				</div>
 				<div class="recipe_text">
@@ -93,7 +99,10 @@
 		    	  <%= image_tag comment.comment_image_id.thumb150.url %><br>
 		    	 <p class="comment_date"><%= comment.created_at.strftime('%Y/%m/%d')%></p>
 		    	 <p class="comment_body"><%= comment.comment %></p>
-		    	 <p class="commenter">by <%= comment.user.name %></p>
+		    	 <p class="commenter">by <%= link_to user_path (comment.user_id) do %> <%= comment.user.name %><% end %></p>
+               <% if comment.user_id == current_user.id || current_user.admin %>
+		    	 <p class="comment_delete"><%= link_to "コメントを削除する", post_comments_path(@post) , method: :delete , data: { confirm: "本当に削除しますか？" }%></p>
+		       <% end %>
 	    	</div>
 	    	<% end %>
         </div>

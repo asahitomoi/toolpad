@@ -2,12 +2,12 @@
 
 <%= render "layouts/search_activity" %>
 
-キーワードから探す
+<p class = "search_sub">キーワードから探す</p>
 <%= search_form_for(@q, url:search_path) do |f| %>
 <div class="form-group">
           <%= f.search_field :title_cont, class: "form-control",placeholder:"キーワード検索" %>
         </div>
-<%= f.submit%>
+<%= f.submit class: "search_submit"%>
 <% end %>
 
 

@@ -114,7 +114,7 @@
 }
 
 .p_title{
-  color:#069e46;
+  color:#3c8e34;
 }
 
 .post_btn{
@@ -124,11 +124,18 @@
 
 .post_box{
   width:800px;
-  border:dashed thick #f1c078;
+  /*border:dashed thick #f1c078;*/
   margin:30px;
-  border-radius: 10px;
+  /*border-radius: 10px;*/
+  border-bottom: solid 1px;
+  padding-bottom: 30px;
+  background-color: white;
+  margin-top: -30px;
 }
 
+.post_conts{
+  margin-top:60px;
+}
 
 //post_new
 .post_cont{
