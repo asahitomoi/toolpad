@@ -1,0 +1,48 @@
+<div class ="search_dis">
+	 <h4 class ="search_head">疾患から探す</h4>
+
+      	<%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+					<%= f.hidden_field :disease_eq, value:"0" %>
+					<%= f.submit "脳卒中", class:"option_back"%>
+				<% end %>
+
+	    <%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+					<%= f.hidden_field :disease_eq, value:"1" %>
+					<%= f.submit "骨折", class:"option_back"%>
+				<% end %>
+
+		<%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+		<%= f.hidden_field :disease_eq, value:"2" %>
+		<%= f.submit "脊髄損傷", class:"option_back"%>
+	<% end %>
+
+		<%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+		<%= f.hidden_field :disease_eq, value:"3" %>
+		<%= f.submit "神経変性疾患", class:"option_back"%>
+	<% end %>
+
+		<%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+		<%= f.hidden_field :disease_eq, value:"4" %>
+		<%= f.submit "心臓疾患", class:"option_back"%>
+	<% end %>
+
+		<%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+		<%= f.hidden_field :disease_eq, value:"5" %>
+		<%= f.submit "リウマチ", class:"option_back"%>
+	<% end %>
+
+		<%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+		<%= f.hidden_field :disease_eq, value:"6" %>
+		<%= f.submit "精神疾患", class:"option_back"%>
+	<% end %>
+
+		<%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+		<%= f.hidden_field :disease_eq, value:"7" %>
+		<%= f.submit "小児", class:"option_back"%>
+	<% end %>
+
+		<%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+		<%= f.hidden_field :disease_eq, value:"8" %>
+		<%= f.submit "その他", class:"option_back"%>
+	<% end %>
+</div>

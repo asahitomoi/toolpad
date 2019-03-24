@@ -1,2 +1,117 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+	<%= render 'layouts/search_form'%>
+    </div>
+
+    <div class="col-lg-9">
+	<div class="post">
+		<div class="post_top clearfix">
+		  <h1 class="post_title_show crosshead">作品名：<%= @post.title %></h1>
+			<div class="top_left">
+				<% if @post.post_image_id? %>
+	            　　  <%= image_tag @post.post_image_id.url %>
+	            　  <% else %>
+	            　　  <%= image_tag 'noimage.png', :size => "200×200" %>
+	            　  <% end %>
+			</div>
+			<div class="top_right">
+    <div>
+    <% if user_signed_in? %>
+ 	  <% if @post.user == current_user %>
+ 	    <%= link_to "この投稿を削除する",  post_path(@post), method: :delete %>
+ 	  <% elsif @post.favorited_by?(current_user)%>
+        <%= link_to "マイページの保存から外す",  post_favorites_path(@post), method: :delete%>
+      <% else %>
+      <%= link_to "投稿をマイページに保存する",  post_favorites_path(@post), method: :post %>
+      <% end %>
+    <% else %>
+      <p>投稿を保存するには会員登録が必要です。会員登録は<%= link_to new_user_registration_path do %>こちら<% end %>から</p>
+    <% end %>
+      </div>
+			　　　<h2 class="copy">
+					<%= @post.copy %>
+				</h2>
+				<div class="maker">
+					<p>作品の製作者：
+							<%= link_to user_path(@post.user_id) do %>
+							   <% if @post.user.name? %>
+							      <%= @post.user.name %>
+				            	<% else %>
+					               名前はまだ未登録です
+					            <% end %>
+		  			        <% end %>
+		  			</p>
+				</div>
+				<div class="material mt-4">
+					 <table class="table">
+						<thead>
+							<tr>
+								<th>材料</th>
+								<th>必要な量</th>
+							</tr>
+						</thead>
+						<tbody>
+						  <% @post.materials.each do |f|%>
+							<tr>
+								<td><%= f.material %></td>
+								<td><%= f.amount %></td>
+							</tr>
+						<% end %>
+						</tbody>
+					</table>
+				</div>
+				<span>適している疾患：<%= @post.disease %></span><br>
+				<span>適している活動：<%= @post.activity %></span>
+			</div>
+		</div>
+		<div class="post_middle">
+			<div class="recipe clearfix">
+			  <h2 class="crosshead">作り方</h2>
+			  <% @post.recipes.each do |f| %>
+			   <div class="step">
+				<div class="recipe_image">
+					<% if f.recipe_image_id? %>
+	            　　  <%= image_tag f.recipe_image_id.thumb150.url %>
+	            　  <% end %>
+				</div>
+				<div class="recipe_text">
+					<%= 1 + 1%>
+					<%= f.recipe %>
+				</div>
+			   </div>
+			  <% end %>
+			</div>
+		</div>
+		<div class="post_bottom">
+			<div class="tip">
+				<h4 class="crosshead">作品のコツ・誕生秘話・ひとことなど</h4>
+				<%= @post.tip %>
+			</div>
+		</div>
+	</div>
+    <div class="post_others">
+    	<h4 class="crosshead">みんなの声</h4>
+    	<p><%= @post.comments.count %>件のコメント</p>
+    	<div class="comment_boxes clearfix">
+	    	<% @post.comments.each do |comment| %>
+	    	<div class="comment_box">
+		    	  <%= image_tag comment.comment_image_id.thumb150.url %><br>
+		    	 <p class="comment_date"><%= comment.created_at.strftime('%Y/%m/%d')%></p>
+		    	 <p class="comment_body"><%= comment.comment %></p>
+		    	 <p class="commenter">by <%= link_to user_path (comment.user_id) do %> <%= comment.user.name %><% end %></p>
+               <% if comment.user_id == current_user.id || current_user.admin %>
+		    	 <p class="comment_delete"><%= link_to "コメントを削除する", post_comments_path(@post) , method: :delete , data: { confirm: "本当に削除しますか？" }%></p>
+		       <% end %>
+	    	</div>
+	    	<% end %>
+        </div>
+    <% if user_signed_in? %>
+      <%= render 'comment'%>
+    <% else %>
+       <p>コメントをするには会員登録が必要です。会員登録は<%= link_to new_user_registration_path do %>こちら<% end %>から</p>
+     <% end %>
+　　　</div>
+    </div>
+  </div>
+</div>

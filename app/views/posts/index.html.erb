@@ -1,2 +1,15 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class ="container">
+<div class="row">
+
+    <div class="col-lg-3">
+      <%= render 'layouts/search_form'%>
+    </div>
+
+    <div class="col-lg-9">
+      <h1>みんなの作品</h1>
+      <%= render 'post', posts: @posts %>
+    </div>
+
+
+  </div>
+</div>

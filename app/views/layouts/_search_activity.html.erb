@@ -1,0 +1,52 @@
+<div class= "search_act">
+	 <h4 class = "search_head">生活動作から探す</h4>
+      	<%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+					<%= f.hidden_field :activity_eq, value:"0" %>
+					<%= f.submit "食事", class:"option_back"%>
+				<% end %>
+
+	    <%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+					<%= f.hidden_field :activity_eq, value:"1" %>
+					<%= f.submit "トイレ", class:"option_back"%>
+				<% end %>
+
+		<%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+		<%= f.hidden_field :activity_eq, value:"2" %>
+		<%= f.submit "身だしなみ", class:"option_back"%>
+	<% end %>
+
+		<%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+		<%= f.hidden_field :activity_eq, value:"3" %>
+		<%= f.submit "着替え", class:"option_back"%>
+	<% end %>
+
+		<%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+		<%= f.hidden_field :activity_eq, value:"4" %>
+		<%= f.submit "お風呂", class:"option_back"%>
+	<% end %>
+
+		<%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+		<%= f.hidden_field :activity_eq, value:"5" %>
+		<%= f.submit "移動", class:"option_back"%>
+	<% end %>
+
+		<%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+		<%= f.hidden_field :activity_eq, value:"6" %>
+		<%= f.submit "乗り移り動作", class:"option_back"%>
+	<% end %>
+
+		<%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+		<%= f.hidden_field :activity_eq, value:"7" %>
+		<%= f.submit "コミュニケーション", class:"option_back"%>
+	<% end %>
+
+		<%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+		<%= f.hidden_field :activity_eq, value:"8" %>
+		<%= f.submit "趣味・娯楽", class:"option_back"%>
+	<% end %>
+
+	<%= search_form_for(@q,url:search_path, class:"disease_option") do |f| %>
+		<%= f.hidden_field :activity_eq, value:"9" %>
+		<%= f.submit "その他の生活活動", class:"option_back"%>
+	<% end %>
+</div>

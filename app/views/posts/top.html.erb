@@ -1,2 +1,18 @@
-<h1>Posts#top</h1>
-<p>Find me in app/views/posts/top.html.erb</p>
+
+<div class="main-visual clearfix">
+	<div class="image"><%=image_tag 'elderly_stick.jpg', :height =>'300px', :width =>'600px'%></div>
+	<div class="image"><%=image_tag 'uno.jpg', :height =>'300px', :width =>'250px'%></div>
+	<div class="image"><%=image_tag 'shampoo.JPG', :height =>'300px', :width =>'250px'%></div>
+</div>
+
+
+<div class="container">
+	<div class="main-box clearfix">
+		<div class="top-main disease">
+			<%= render 'layouts/search_disease' %>
+		</div>
+	    <div class="top-main activity">
+			<%= render 'layouts/search_activity' %>
+		</div>
+	</div>
+</div>

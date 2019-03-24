@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- saved from url=(0124)http://api.b.st-hatena.com/entry/button/?url=http%3A%2F%2Ffree-line-design.com%2F&layout=vertical-balloon&lang=ja&mode=popup -->
+<html lang="ja" class="bbutton-html-wrapper"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>はてなブックマークボタン</title>
+<link rel="canonical" href="http://b.hatena.ne.jp/entry/free-line-design.com/">
+<link rel="stylesheet" href="./reset.css" type="text/css" media="all">
+<link rel="stylesheet" href="./entry-button.css" type="text/css" media="all">
+
+<script>
+  function clickHandler() {
+    var match = window.name.match(/^(\w+)\|((https?:\/\/[^\/?#]+)[^#]*)/);
+    if (!match) return;
+    window.parent.postMessage('HBMessage@{"type": "click"}', match[3]);
+  }
+</script>
+</head><body>
+
+
+  <div class="btn-vertical theme- lang-ja" onclick="if (event.button === 0) { clickHandler(); return false; }">
+    <a href="http://b.hatena.ne.jp/entry/free-line-design.com/" target="_blank" class="count" onclick="if (event.button === 0) { event.stopPropagation(); }">172</a>
+    <a href="http://b.hatena.ne.jp/entry/free-line-design.com/" class="text" target="_top" title="このエントリーをはてなブックマークに追加 (172 users)"></a>
+  </div>
+
+
+
+</body></html>

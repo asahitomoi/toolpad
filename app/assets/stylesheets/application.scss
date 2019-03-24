@@ -12,7 +12,168 @@
  *
  *= require_tree .
  *= require_self
+ *= require select2
  */
+
+
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #331a1a;
+}
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+header{
+	background-color: #fba810e6;
+	width: 100%;
+}
+
+#header_item a{
+	color:#331a1a;
+}
+
+#header_item a:hover{
+	text-decoration: none;
+    color: #948d8d;
+    background-color: none;
+}
+
+.navbar-nav > li > a:hover {
+    background-color: transparent;
+}
+
+a:hover {
+	text-decoration:none;
+}
+
+a{
+  color:#3c8e34;
+}
+
+body {
+	background-color: #FFFFDD;
+}
+
+.option_back {
+	width:250px;
+	height:30px;
+	background-color:#FFFFDD;
+}
+
+.option_back:hover    {
+    color: #331a1a;
+    background:#ccc;
+}
+
+//
+.top-nav {
+  background-color: white;
+  height:50px;
+  width:100%;
+  text-align: center;
+  color: #331a1a;
+  font-weight: bold;
+  border-right: 1px solid #331a1a;
+}
+
+.top-list {
+  display: block;
+  text-align: center;
+  padding: 10px 0 5px 0;
+  margin: 0 auto;
+}
+
+.top-item {
+  list-style-type: disc;
+  list-style: none;
+  display: block;
+  width: 25%;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  border-right: 1px solid #331a1a;
+}
+
+.top-item a{
+  line-height: 30px;
+  color: #331a1a;
+  font-weight: bold;
+  font-family:serif;
+  font-size:large;
+}
+
+.top-item a:hover {
+    color: #BA9057;
+    border-bottom: 1px solid #ba9057;
+    padding: 6px 16px;
+    text-decoration: none;
+}
+
+//search_form
+
+.search_dis{
+	font-family: YuGothic;
+  margin-top:60px;
+}
+
+.search_act{
+	font-family: YuGothic;
+}
+
+.search_head{
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding-left: 30px;
+}
+
+.search_sub{
+    margin: 30px auto 10px auto;
+    padding-left: 30px;
+    text-align: center;
+}
+
+.form-control{
+margin-left: 18px;
+}
+
+.search_submit{
+    margin-left:180px;
+}
+
+//お問い合わせボタン
+.arrow_btn {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  padding: 0.8em;
+  text-align: center;
+  text-decoration: none;
+  color: #1B1B1B;
+  background: #fff;
+  border-radius: 30px;
+  border:1px solid #a7a7a7;
+  transition: transform ease .3s;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
+.arrow_btn:hover {
+   cursor: pointer;
+   text-decoration: none;
+}
+
+.arrow_btn span {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform ease .3s;
+}
+
+.arrow_btn:hover span{
+  cursor: pointer;
+  text-decoration: none;
+  transform: translateX(6px);
+}

@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-3">
+     	<%= render 'layouts/search_form'%>
+        </div>
+        <div class="col-lg-9">
+        <%= render 'user_info'%>
+			<div class="user_favorite">
+				<h2>保存した作品</h2>
+				<%= render 'posts/post', posts: @favorites %>
+			</div>
+        </div>
+    </div>
+</div>

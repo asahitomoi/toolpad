@@ -1,3 +1,253 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.clearfix{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.main-visual {
+  width: 1100px;
+  height: 300px;
+  margin: 20px auto;
+}
+
+.image{
+  float:left;
+}
+
+.main-box{
+  width:600px;
+  margin:20px auto;
+}
+
+.pic {
+  width: 100%;
+  height: 300px;
+  background-size:cover;
+  background-position:center;
+  background-image: url(images/elderly_walk_2.jpg);
+}
+
+.top-main{
+  width:300px;
+  height: 300px;
+  float: right;
+}
+
+
+.top_list{
+  list-style: none;
+}
+
+//post_show
+
+.post_title_show{
+  text-align: left;
+  text-decoration: none;
+}
+
+.post_top{
+  width:100%;
+}
+
+.top_left{
+ width:300px;
+ float:left;
+ margin:30px;
+}
+
+.top_right{
+ width:420px;
+ float:left;
+ margin:30px;
+}
+
+.step{
+  width:300px;
+  float:left;
+}
+
+.comment_box{
+  width:150px;
+  float:left;
+  margin:30px;
+}
+
+.comment_date{
+  text-align: right;
+  font-size: small;
+}
+
+.commenter{
+  text-align: right;
+}
+
+.comment_body{
+  width:150px;
+}
+
+.crosshead{
+  padding: 0.5em;
+  color: #494949;
+  background: #fffaf4;
+  border-left: solid 5px #ffaf58;
+}
+
+//post_index
+
+.post_image{
+  float:left;
+  margin:30px;
+}
+
+.index_right{
+  float:left;
+  margin:0px 30px;
+}
+
+.post_title{
+  text-align: left;
+  text-decoration: none;
+}
+
+.p_title{
+  color:#3c8e34;
+}
+
+.post_btn{
+  width:150px;
+  color:white;
+}
+
+.post_box{
+  width:800px;
+  /*border:dashed thick #f1c078;*/
+  margin:30px;
+  /*border-radius: 10px;*/
+  border-bottom: solid 1px;
+  padding-bottom: 30px;
+  background-color: white;
+  margin-top: -30px;
+}
+
+.post_conts{
+  margin-top:60px;
+}
+
+//post_new
+.post_cont{
+  width:850px;
+  margin:0px auto;
+}
+
+.material_field{
+  width: 300px;
+}
+
+.material_table{
+  width:750px;
+}
+
+.td_material{
+  width:300px;
+  height:20px;
+  float:left;
+  margin:10px;
+}
+
+.td_material_left{
+  width:120px;
+  float:left;
+  margin:10px;
+  height:20px;
+}
+
+.recipe_cont{
+  float:left;
+  width:220px;
+  margin:20px;
+}
+
+.recipe{
+ width:800px;
+}
+
+.title_field{
+ width:300px;
+ height:60px;
+}
+
+.copy_field{
+ width:500px;
+}
+
+.recipe_field{
+ height:100px;
+}
+
+.tip_field{
+ width:300px;
+}
+
+/*.btn-flat-simple {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4;
+  background: #ECECEC;
+  transition: .4s;
+}
+
+.btn-flat-simple:hover {
+  background: #00bcd4;
+  color: white;
+}*/
+
+.post_sub{
+  margin:15px;
+}
+
+//post_introduce
+.image_introduce{
+  margin-left: 130px;
+  margin-top: 70px;
+}
+
+.introduction{
+  background-color:white;
+  margin: 30px auto;
+  margin-top: 100px;
+  padding: 40px;
+  width: 960px;
+}
+
+.introduction_text{
+  margin: 60px;
+  text-align: center;
+  font-family: serif;
+  font-size: medium;
+}
+
+.under_line{
+   height:8px;
+   width:600px;
+   height: 8px;
+   margin-top: 10px;
+   margin-left: 120px;
+}
+
+//post_selfdevise
+.ot_text{
+  margin:10px auto;
+  width:550px;
+  font-size:14px;
+}
+
+.from_ot{
+  float:right;
+}

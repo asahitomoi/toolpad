@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_103033) do
+ActiveRecord::Schema.define(version: 2019_03_23_072150) do
 
   create_table "comments", force: :cascade do |t|
     t.string "comment_image_id"
@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(version: 2019_03_05_103033) do
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "inquiries", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -78,6 +83,14 @@ ActiveRecord::Schema.define(version: 2019_03_05_103033) do
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "place"
+    t.string "name"
+    t.string "user_image_id"
+    t.string "introduce"
+    t.integer "gender"
+    t.integer "age"
+    t.boolean "deleted_at"
+    t.boolean "admin", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

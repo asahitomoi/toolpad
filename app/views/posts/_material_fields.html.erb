@@ -1,0 +1,8 @@
+<div class="nested-fields material">
+  <div class="tr_material clearfix">
+    <div class="td_material"><%= f.text_field :material, placeholder: "材料を入力してください" ,class: "material_field"%></div>
+    <div class="td_material"><%= f.text_field :amount, placeholder: "量を入力してください",class: "material_field"%></div>
+
+    <div class="td_material_left"><%= link_to_remove_association "欄を削除する", f,class: "material_field" %></div>
+  </div>
+</div>

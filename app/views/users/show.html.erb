@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-3">
+     	<%= render 'layouts/search_form'%>
+        </div>
+        <div class="col-lg-9">
+        <%= render 'user_info'%>
+			<div class="user_post">
+				<h2>投稿した作品</h2>
+				<span class="text-left"><%= link_to "投稿した作品をもっとみる", user_post_path(@user.id) %> </span>
+
+				<%= render 'posts/post', posts: @posts %>
+
+			</div>
+			<% if @user == current_user  %>
+			<div class="user_favorite">
+				<h2>保存した作品</h2>
+				<span class="text-left"><%= link_to "保存した作品をもっとみる", user_favorite_path(@user.id) %></span>
+				<%= render 'posts/post', posts: @favorites %>
+			</div>
+			<% end %>
+        </div>
+    </div>
+</div>
+
+
+<!--  && !(current_user == @user -->

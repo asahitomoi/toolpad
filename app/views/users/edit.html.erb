@@ -1,0 +1,44 @@
+<div class="container">
+  <h1>お客様情報の変更</h1>
+  <table class="table table-size">
+    <thead>
+    	<tr>
+    		<th>登録情報</th>
+    		<th>登録内容</th>
+    	</tr>
+    </thead>
+    <tbody>
+      <%= form_for(@user) do |user| %>
+        <tr>
+            <td>名前</td>
+            <td><%= user.text_field :name%></td>
+        </tr>
+        <tr>
+            <td>写真を変更する</td>
+            <td><%= user.file_field :user_name_id %></td>
+        </tr>
+        <tr>
+    	    <td>メールアドレス</td>
+    	    <td><%= user.text_field :email%></td>
+        </tr>
+        <tr>
+            <td>パスワード</td>
+            <td><%= user.password_field :password, value: @user.password %></td>
+        </tr>
+        <tr>
+            <td>パスワードの確認</td>
+            <td><%= user.password_field :password_confirmation, autocomplete: "new-password" %>
+            </td>
+        <tr>
+        	<td>性別</td>
+        	<td><%= user.select :gender, User.genders.keys, {prompt: '選択してください'}%></td>
+        </tr>
+       <tr>
+        	<td>年代</td>
+        	<td><%= user.select :age, User.ages.keys, {prompt: '選択してください'}%></td>
+        </tr>
+    </tbody>
+  </table>
+  <%= user.submit "変更内容を登録する", class:"btn btn-success" ,style:"marigin:0, auto" %>
+<% end %>
+</div>

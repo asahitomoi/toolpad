@@ -1,0 +1,31 @@
+<div class ="post_conts">
+<% posts.each do |f| %>
+ <div class="post_box clearfix">
+    <div class="post_image">
+      <% if f.post_image_id? %>
+       <%= link_to post_path(f.id) do %>
+        <%= image_tag f.post_image_id.thumb.url %>
+       <% end %>
+      <% else %>
+        <%= image_tag 'noimage.png', :size =>'200x200' %>
+      <% end %>
+    </div>
+    <div class="index_right">
+      <h1 class="post_title">
+        <%= link_to "#{f.title}",post_path(f.id), class: "p_title" %>
+      </h1>
+       <% if f.user.name? %>
+        製作者：<%= link_to user_path(f.user_id) do %><%= f.user.name %><% end %>さん
+        <% else %>
+        <span>製作者：<%= link_to user_path(f.user_id) do %>名前はまだ未登録です<% end %></span>
+　　　　 <% end %>
+      <h4 class="post_copy">
+        <%= f.copy %>
+      </h4>
+      <span>適している疾患：<%= f.disease %></span><br>
+      <span>適している活動：<%= f.activity %></span><br>
+    <!--   <h5 class="btn btn-warning post_btn"><%#= link_to "作品の作り方を見る", post_path(f.id) %></h5> -->
+    </div>
+</div>
+<% end %>
+</div>
