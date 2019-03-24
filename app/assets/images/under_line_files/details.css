@@ -1,0 +1,653 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+
+#content{
+	width:100%;
+	position:relative;
+	
+}
+
+section#detailWrap{
+	width:100%;
+	position:relative;
+}
+
+#content #detailBox02{
+	width:100%;
+	padding-top:20px;
+	clear:both;
+	
+}
+
+
+#comments{
+		width:90%;
+		margin:5px auto;
+	
+}
+
+
+article ul#mainList li p{
+		overflow:hidden;
+		width:100%;
+		border: 5px solid #fafafa;
+		height: 100px;
+		margin-bottom: 5px;
+		overflow: hidden;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+		line-height:100px;
+		background:#FFFFFF;
+		position:relative;
+		cursor: pointer;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+}
+
+article ul#mainList li{
+	margin:10px 30px 10px 0px;
+	width:100%;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+
+	article ul#mainList{
+		float:none;
+		overflow:hidden;
+		width:100%;
+		overflow:hidden;
+	
+}
+
+
+ul#changMainList li{
+	margin:10px 5px 10px 5px;
+	width:100%;
+}
+
+
+#overLayer{
+	display:none;
+    position:absolute;2
+    top:0%;
+    left:0%;
+	padding:20px;
+	width:100%;
+  	margin: 50px 0 50px 0px;
+	background:#FFFFFF;
+	opacity: 1;
+	z-index:101;
+	border-radius:10px;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+#mainTitle{
+	float:none;
+	width:100%;	
+}
+
+#overLayer h1{
+	border-left: #6dc3de 3px solid;
+	color: #565d61;
+	font-size: 170%;
+	padding: 0 2px 0 16px;
+	letter-spacing: 0.05em;
+	margin: 30px 10px 10px 0;
+}
+
+
+/* jpg ⇔　png　の選択　*/
+
+#overLayer #changeImg{
+	position:absolute;
+	top:0px;
+	right:10px;
+	cursor:pointer;
+	
+}
+
+#overLayer #changeImg img{
+	width:100px;
+}
+
+
+#changBg{
+	float:none;
+	width:300px;
+	margin-top:30px;
+}
+
+
+ul#mainpList li{
+	width:100px;
+	float:left;
+	margin:10px 30px 10px 0px;
+}
+
+ul#mainpList li p{
+	margin:10px 10px 10px 0px;
+	border: 5px solid #F1F1F1;
+	height: 80px;
+	margin-bottom: 5px;
+	overflow: hidden;
+	line-height:100px;
+	width:100px;
+}
+
+
+/** 詳細 ここから　**********************************/
+
+@media screen and (min-width: 640px) {
+
+ul#mainpList li p{
+	margin:10px 30px 10px 0px;
+	border: 5px solid #F1F1F1;
+	height: 100px;
+	margin-bottom: 5px;
+	overflow: hidden;
+	line-height:100px;
+	width:100px;
+}
+
+ul#mainpList li{
+	width:120px;
+	float:left;
+	margin:10px 30px 10px 0px;
+}
+
+#changBg{
+	float:right;
+	width:360px;
+	margin-top:80px;
+}
+
+	article ul#mainList{
+		float:left;
+		overflow:hidden;
+		width:730px;
+		overflow:hidden;
+	
+}
+
+#mainTitle{
+	float:left;
+	width:600px;	
+}
+
+
+
+article ul#mainList li{
+	margin:10px 30px 10px 0px;
+	width:100%;
+	padding-left:10px;
+}
+
+
+article ul#mainList li p{
+		overflow:hidden;
+		padding-right:10px;
+		width:700px;
+		border: 5px solid #fafafa;
+		height: 100px;
+		margin-bottom: 5px;
+		overflow: hidden;
+		padding: 0 10px 0 10px;
+		line-height:100px;
+		background:#FFFFFF;
+		position:relative;
+		cursor: pointer;
+
+	}
+	
+	#content .detailBox p,
+	#content #detailBox02 p{
+	margin:10px 16px;	
+	margin:10px 26px;	
+}
+
+#overLayer h1{
+	border-left: #6dc3de 3px solid;
+	color: #565d61;
+	font-size: 170%;
+	padding: 0 2px 0 16px;
+	letter-spacing: 0.05em;
+	margin: 10px 10px 10px 0;
+}
+
+/* jpg ⇔　png　の選択　*/
+
+#overLayer #changeImg{
+	position:absolute;
+	top:0px;
+	right:10px;
+	cursor:pointer;
+	
+}
+
+#overLayer #changeImg img{
+	width:180px;
+}
+
+
+}
+
+@media screen and (min-width: 1200px) {
+	
+	#overLayer{
+	display:none;
+    position:absolute;2
+    top:0%;
+    left:50%;
+	padding:20px;
+	width:1100px;
+  	margin: 50px 0 0 -580px;
+	background:#FFFFFF;
+	opacity: 1;
+	z-index:101;
+	border-radius:10px;
+}
+	
+	
+	#comments{
+		width:800px;
+	
+}
+	section#detailWrap{
+	width:1040px;
+}
+
+#content #detailBox02{
+	width:930px;
+	padding-top:20px;
+	clear:both;
+	
+}
+
+ul#changMainList li{
+	margin:10px 30px 10px 0px;
+	width:1100px;
+}
+
+
+}
+
+
+
+section#detailWrap #txt p{
+	color:#666;
+	font-family:meiryo,"メイリオ";
+	letter-spacing:0.01em;
+	
+	
+}
+
+
+ul#mainpList{
+	clear:both;
+	
+}
+	
+
+
+
+
+
+ul#mainpList li p img{
+	vertical-align:middle;
+}
+
+
+
+
+
+
+ul#changMainList li p{
+  height: 100px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  line-height:100px;
+  position:relative;
+  cursor: pointer;
+  text-align:center;
+
+}
+
+ul#changMainList li p img{
+	vertical-align:middle;
+}
+
+
+
+
+#content #imgBox{
+	width:420px;
+	float:left;
+	margin:10px;
+}
+#content #imgBox img{
+	cursor:pointer;
+}
+
+#content #imgBox span{
+	font-size:80%;
+	display:block;
+	
+}
+
+#content .detailBox{
+	width:485px;
+	float:right;
+}
+#content .detailBox h2{
+	margin-bottom:10px;
+
+}
+#content .detailBox p{
+	margin-bottom:15px;
+
+}
+
+
+
+
+
+#content .detailBox span{
+	background:#F5F5F5;
+	border-radius:5px;
+	display:inline-block;
+	padding:3px;
+	margin-left:10px;
+	
+}
+
+#content #detailBox02 ul.variation{
+	margin-left:10px;
+}
+
+ul.variation{
+	padding-bottom:15px;
+}
+
+ul.variation li{
+	display:block;
+	background:#f4f4f6;
+	float:left;
+	width:75px;
+	height:85px;
+	display:inline-block;
+	height:66px;
+	text-align:center;
+	vertical-align:middle;
+	margin:20px 10px 0 0;
+	padding:20px 0 0;
+	text-indent:-9999px;
+	cursor:pointer;
+}
+
+ul.variation li.variSelected{
+	border-bottom:4px solid #FF0000;
+}
+
+
+
+
+#changBg ul#bg li{
+	width:30px;
+	height:30px;
+	float:left;
+	margin-right:10px;
+}
+
+#changBg ul#bg li.on{
+	border:2px solid #efd284;
+	
+}
+
+#changBg ul#bg li:nth-child(1){background:#fff}
+#changBg ul#bg li:nth-child(2){background:url(../img/bg_01.jpg);}
+#changBg ul#bg li:nth-child(3){background:url(../img/bg_02.jpg);}
+#changBg ul#bg li:nth-child(4){background:#42d2d4}
+#changBg ul#bg li:nth-child(5){background:#e78f89}
+#changBg ul#bg li:nth-child(6){background:#363636}
+
+
+/* 詳細　ポップアップ ここから *******************************************************************************/
+
+
+#glayLayer{
+    position:fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background:black;
+    opacity: 0.60;
+    filter:alpha(opacity=60);
+	display:none;
+	z-index:100;
+}
+
+
+
+#overLayer a{
+	text-decoration:none;
+}
+
+* html #glayLayer{
+    position:absolute;
+}
+* html #overLayer{
+    position: absolute;
+}
+
+
+
+
+#overLayer p.info{
+padding: 10px;
+font-size: 90%;
+margin: 10px 0;
+}
+
+#overLayer p.info span{
+	font-size:150%;
+	display:inline-block;
+	padding:0 4px;
+	color:#6dc3de;
+	
+}
+
+
+
+
+
+#overLayer #changeImg img{
+	margin:0 10px 10px 0;
+	
+}
+
+
+/* 大中小の選択*/
+
+#overLayer ul#LMS li{
+	float:left;
+	margin:0px 10px 10px 0;
+	color:#6dc3de;
+	font-weight:bold;
+	border:1px solid #6dc3de;
+	padding:5px 10px;
+	display:block;
+	cursor:pointer;
+	width: 180px;
+	text-align: center;
+	font-size: 80%;
+	background:#FFF;
+}
+
+#overLayer ul#LMS li.on{
+	background:#6dc3de;
+	color:#fff;
+	
+}
+
+
+#overLayer ul#download li,
+#overLayer ul#download02 li{
+	float:left;
+	margin:0px 10px 0 0;
+	color:#fff;
+	font-weight:bold;
+	border:1px solid #6dc3de;
+	padding:5px 10px;
+	display:block;
+	cursor:pointer;
+	width: 180px;
+	text-align: center;
+	font-size: 80%;
+  	background:#6dc3de;
+}
+
+#overLayer ul#download li a,
+#overLayer ul#download02 li a{
+	font-weight:bold;
+	color:#FFF;
+	
+}
+
+
+p.pankuzu{
+	font-size: 10px;
+	margin: 20px 0 0 0;	
+}
+
+/*メイン画像表示の切り替え部分*/
+
+
+/*閉じるボタン*/
+
+#overLayer #btnClose{
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	border-radius:0 0 9px 0 / 0 0 10px 0 !important;
+}
+#overLayer #btnClose img{
+	border-radius:0 0 9px 0 / 0 0 10px 0 !important;
+}
+
+/*ファイルダウンロード*/
+ul#fileDownload{
+	width:70%;
+	margin-bottom:35px;
+
+}
+ul#fileDownload li{
+	float:left;
+	width:22%;
+	margin-left:3%;
+	background:#6699CC;
+	background:#FD475C;	
+	
+	
+	color:#fff;
+	line-height:2.6em;
+	text-align:center;
+	display:block;
+	cursor:pointer;
+}
+
+/* download popup */
+div#fileDownCover{
+	display:none;
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	background:#000;
+	opacity:0.8;
+	z-index:9000;
+}
+div#fileDown{
+		display:none;
+		position:absolute;
+		top:50%;
+		left:50%;
+		width:540px;
+		margin-top:20px;
+		margin-left:-275px;
+		border:5px solid #CCC;
+		padding:0 10px 10px 10px;
+		z-index:9500;
+		background:#fff;
+	}
+div#fileDown p.dl_lead{
+	margin:0;
+	margin-left:-10px;
+	padding:0;
+	line-height:40px;
+	text-indent:70px;
+	background:#CCC url(../line/images/logo_s.gif) no-repeat;
+
+}
+#waitIMG{
+	margin:15px 20px;
+	width:500px;
+
+}
+div#fileDownClose{
+	width:45px;
+	height:45px;
+	cursor:pointer;
+	position:absolute;
+	top:-5px;
+	right:-5px;
+}
+div#dlBtnbox p{
+	text-align:center;
+	letter-spacing:1.1;
+}
+div#dlBtnbox p span{
+	font-size:1.8em;
+	font-weight:bold;
+}
+div#ADdown{
+	margin-top:12px;
+	margin-left:36px;
+}
+div#dlBtnboxBtn{
+	display:none;
+	width:50%;
+	height:2.5em;
+	line-height:2.5em;
+	text-align:center;
+	margin:0 auto;
+	color:#fff;
+	background:#0099CC;
+	border-bottom:4px solid #006699;
+	border-radius:5px;
+	cursor:pointer;
+}
+div#dlBtnboxBtn:hover{
+	background:#FC0;
+	border-bottom:4px solid #F90;
+}
+div#dlBtnboxBtn a{
+	text-decoration:none;
+	color:#fff;
+	display:block;
+}
+
+
+p.pr{
+position: absolute;
+top: 350px;
+width: 446px;
+font-size: 12px;
+margin: 10px 0 0 120px;
+color: #fff;
+}
+
