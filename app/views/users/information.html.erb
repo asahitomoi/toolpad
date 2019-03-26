@@ -1,7 +1,7 @@
 <div class="container">
     <p class="notice"><%= notice %></p>
   <h1>お客様情報</h1>
-  <table class="table table-size">
+  <table class="table" id="info_table">
     <thead>
     	<tr>
     		<th>登録情報</th>
@@ -35,11 +35,18 @@
         	<td>年代</td>
         	<td><%=@user.age%></td>
         </tr>
-    </tbody>
-  </table>
-  <button type="button" class="btn btn-success"><%= link_to"内容を変更する", edit_user_path(@user.id)%></button>
+        <tr>
+            <td>ひとこと</td>
+            <td><%=@user.introduce%></td>
+        </tr>
 
-  <button type="button" class="btn btn-default"><%= link_to"会員登録をやめる", user_path(@user), method: :delete, data: { confirm: "会員登録をやめると投稿作品などは消えてしまいます。本当に削除しますか？" }%></button>
+        </tbody>
+  </table>
+
+     <div class="info_btn"><button type="button" class="btn btn-success"><%= link_to"内容を変更する", edit_user_path(@user.id),style:"color:white;"%></button></div>
+
+     <div class="info_btn"><button type="button" class="btn btn-default"><%= link_to"会員登録をやめる", user_path(@user), method: :delete, data: { confirm: "会員登録をやめると投稿作品などは消えてしまいます。本当に削除しますか？" }%></button></div>
+
 
 
 </div>

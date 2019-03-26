@@ -1,6 +1,7 @@
 <div class="container">
+  <h1>作品を投稿する</h1>
   <div class="post_cont">
-	<h1>作品を投稿する</h1>
+	<%= render 'layouts/error_message', er:@post %>
 	<%= form_for(@post) do |f| %>
 		<div class="post_up">
 			<div class="post_sub">
@@ -123,7 +124,7 @@
 	           	  <% end %>
 	           	</div>
 	               <div id="links">
-	                   <%= link_to_add_association "材料欄を追加する", f, :materials ,class: "btn-flat-simple"%><br>
+	                   <%= link_to_add_association "材料欄を追加する", f, :materials ,class: "add_btn"%><br>
 	               </div>
 	           </div>
 
@@ -146,7 +147,7 @@
 	           	    <%= render 'recipe_fields', f: recipe %>
 	           	 <% end %>
 	               <div id="links">
-	                   <%= link_to_add_association "作り方欄を追加する", f, :recipes%><br>
+	                   <%= link_to_add_association "作り方欄を追加する", f, :recipes ,class: "add_btn"%><br>
 	               </div>
 	        </div>
 	      </div>

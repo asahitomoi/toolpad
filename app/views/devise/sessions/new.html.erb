@@ -2,6 +2,8 @@
   <div class="devise_box">
     <h1>ログイン</h1>
 
+   <!--  <%#= render 'layouts/error_message', er:@user %> -->
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :メールアドレス %><br />

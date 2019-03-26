@@ -11,9 +11,12 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    # @posts = Post.all.order('created_at ASK')
     @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true)
+    @posts = @q.result(distinct: true).page(params[:page]).per(5)
+    # .page(params[:page]).per(5)
+    # @posts = Post.all.order('created_at ASK')
+    # @post = Post.page(params[:page]).per(5)
   end
 
   def show
@@ -22,6 +25,8 @@ class PostsController < ApplicationController
     @comment = Comment.new
     @q = Post.ransack(params[:q])
     @posts = @q.result(distinct: true)
+    # @number = 1
+    # @number = @number += 1
   end
 
   def new
@@ -47,8 +52,8 @@ class PostsController < ApplicationController
   end
 
   def search
-    @q = Post.search(search_params)
-    @posts = @q.result(distinct: true)
+    @q = Post.ransack(search_params)
+    @posts = @q.result(distinct: true).page(params[:page]).per(5)
   end
 
   private

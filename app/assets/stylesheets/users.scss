@@ -3,12 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.table-size{
-	width: 60%;
+#info_table{
+	width: 700px;
+	margin:20px auto;
 }
 
 .user_btn{
 	width:225px;
+}
+
+.info_btn{
+	width: 700px;
+	margin:0 auto;
+	color:white;
 }
 
 // user_show
@@ -21,5 +28,4 @@
 .user_right{
 	float:left;
 	margin:30px;
-
 }

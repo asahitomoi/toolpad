@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+	 before_action :correct_user, only:[:edit, :update]
+
 	def information
 		@user = User.find(params[:user_id])
 	end
@@ -11,19 +13,24 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@q = Post.ransack(params[:q])
         @posts = @q.result(distinct: true)
-        @posts = @user.posts
-        @favorites = @user.favorite_posts
+        # @posts = Post.find_by(@user.post_id: post.id)
+        @post = @user.posts.page(params[:page]).per(5)
+        # @favorites = @user.favorite_posts
+         # # @posts = Post.all.order(created_at: :desc)
+         # @posts = Post.page(params[:page]).per(5)
 	end
 
 	def favorite
 		@q = Post.ransack(params[:q])
         @posts = @q.result(distinct: true)
-        @favorites = @user.favorite_posts
+        @user = User.find(params[:user_id])
+        @favorites = @user.favorite_posts.page(params[:page]).per(5)
+        # @posts = Post.all.order(created_at: :desc)
+        # @posts = Post.page(params[:page]).per(5)
 	end
 
 	def post
 		@user = current_user
-		# @user = User.find(current_user.id)
 		@post = @user.posts
 		@q = Post.ransack(params[:q])
         @posts = @q.result(distinct: true)
@@ -35,8 +42,11 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-		@user.update(user_params)
-		redirect_to user_information_path(@user.id), notice: "お客様情報を変更しました"
+		if @user.update(user_params)
+		   redirect_to user_information_path(@user.id), notice: "お客様情報を変更しました"
+		else
+		   render 'edit'
+		end
 	end
 
 	def destroy
@@ -53,4 +63,11 @@ class UsersController < ApplicationController
 		params.require(:user).permit(:name, :place, :user_image_id, :gender, :age, :email ,:password ,:password_confirmation)
 	end
 
-end
+	def correct_user
+	     user =User.find(params[:id])
+	     if current_user != user
+	        redirect_to user_path(user.id)
+	     end
+	end
+
+    end

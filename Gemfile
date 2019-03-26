@@ -70,6 +70,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
  gem 'cocoon'
  gem 'select2-rails'
  gem 'rails-i18n'
+ gem 'devise-i18n-views'
  gem 'pry-rails'
  gem 'ransack'
  gem 'kaminari'

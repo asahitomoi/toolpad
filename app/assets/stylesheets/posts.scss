@@ -42,15 +42,24 @@
   list-style: none;
 }
 
+.top_act{
+  margin-top:-30px;
+}
+
+.top_dis{
+  margin-top:-67px;
+}
+
 //post_show
 
 .post_title_show{
-  text-align: left;
+  text-align: center;
   text-decoration: none;
 }
 
 .post_top{
-  width:100%;
+  width:670px;
+  margin:10px auto;
 }
 
 .top_left{
@@ -59,8 +68,12 @@
  margin:30px;
 }
 
+.copy{
+  font-size:20px;
+}
+
 .top_right{
- width:420px;
+ width:250px;
  float:left;
  margin:30px;
 }
@@ -74,6 +87,10 @@
   width:150px;
   float:left;
   margin:30px;
+}
+
+.comment_boxes{
+  width:700px;
 }
 
 .comment_date{
@@ -96,16 +113,64 @@
   border-left: solid 5px #ffaf58;
 }
 
+.cross{
+  color: white;
+}
+
+  /*padding: 0.3em;
+    color: white;
+    background: #191917;
+    border-left: solid 5px #ffaf58;
+}*/
+
+.post_detail{
+  width:615px;
+  margin:10px auto;
+}
+
+.favorite-btn{
+  display: inline-block;
+  width: 250px;
+  height:30px;
+  line-height: 25px;
+  text-align: center;
+  text-decoration: none;
+  color: #1B1B1B;
+  background:  #f6f7ed;
+  border-radius: 30px;
+  border:1px solid #a7a7a7;
+  float: right;
+}
+
+.delete-btn{
+  float:right;
+  margin-right: 35px;
+}
+
+.comment-btn{
+  display: inline-block;
+  width: 250px;
+  height:30px;
+  text-align: center;
+  text-decoration: none;
+  color: #1B1B1B;
+  background:  #f6f7ed;
+  border-radius: 30px;
+  border:1px solid #a7a7a7;
+}
+
 //post_index
 
 .post_image{
   float:left;
   margin:30px;
+  width:200px;
 }
 
 .index_right{
   float:left;
   margin:0px 30px;
+  width:450px;
 }
 
 .post_title{
@@ -115,6 +180,8 @@
 
 .p_title{
   color:#3c8e34;
+  font-size: 30px;
+  font-family: serif;
 }
 
 .post_btn{
@@ -138,9 +205,10 @@
 }
 
 //post_new
+
 .post_cont{
   width:850px;
-  margin:0px auto;
+  margin:70px auto;
 }
 
 .material_field{
@@ -148,7 +216,7 @@
 }
 
 .material_table{
-  width:750px;
+  width:800px;
 }
 
 .td_material{
@@ -159,7 +227,6 @@
 }
 
 .td_material_left{
-  width:120px;
   float:left;
   margin:10px;
   height:20px;
@@ -176,12 +243,12 @@
 }
 
 .title_field{
- width:300px;
+ width:630px;
  height:60px;
 }
 
 .copy_field{
- width:500px;
+ width:630px;
 }
 
 .recipe_field{
@@ -189,7 +256,7 @@
 }
 
 .tip_field{
- width:300px;
+ width:630px;
 }
 
 /*.btn-flat-simple {
@@ -210,6 +277,22 @@
 
 .post_sub{
   margin:15px;
+}
+
+.add_btn{
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  padding: 0.8em;
+  text-align: center;
+  text-decoration: none;
+  color: #1B1B1B;
+  background: #fff;
+  border-radius: 30px;
+  border:1px solid #a7a7a7;
+  transition: transform ease .3s;
+  margin-left: 50px;
+  margin-top: 30px;
 }
 
 //post_introduce
@@ -239,6 +322,10 @@
    height: 8px;
    margin-top: 10px;
    margin-left: 120px;
+}
+
+.usage{
+  margin-left:80px;
 }
 
 //post_selfdevise

@@ -7,7 +7,8 @@
 
     <div class="col-lg-9">
       <h1>みんなの作品</h1>
-      <%= render 'post' , posts: @posts %>
+      <%= render 'post', posts: @posts %>
+      <div class="pager"><%= paginate @posts %></div>
     </div>
   </div>
 </div>

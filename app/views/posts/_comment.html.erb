@@ -1,11 +1,11 @@
 <div class="container admin-title admin-box">
-         <button type="button" data-toggle="modal" data-show="true" data-target="#modal-comment" class="btn btn-secondary btn-a">作品にコメントをする</button>
+         <button type="button" data-toggle="modal" data-show="true" data-target="#modal-comment" class="comment-btn">作品にコメントをする</button>
                           <div class="modal fade" id="modal-comment" tabindex="-1" role="dialog" aria-labelledby="myModalOptionLabel">
                             <div class="modal-dialog" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
                                   <h5 class="modal-title" id="myModalOptionLabel">作品にコメントをする</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>
                                 <div class="modal-body">
                                    <%= form_for([@post, @comment]) do |f| %>
@@ -23,3 +23,5 @@
                               </div>
                             </div>
                           </div>
+
+
