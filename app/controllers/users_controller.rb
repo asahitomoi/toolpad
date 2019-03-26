@@ -29,11 +29,11 @@ class UsersController < ApplicationController
         # @posts = Post.page(params[:page]).per(5)
 	end
 
-	def post
+	def index
 		@user = current_user
-		@post = @user.posts
 		@q = Post.ransack(params[:q])
         @posts = @q.result(distinct: true)
+        @users = User.all.page(params[:page]).per(20)
 	end
 
 	def edit
@@ -41,9 +41,9 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		@user = User.find(params[:id])
-		if @user.update(user_params)
-		   redirect_to user_information_path(@user.id), notice: "お客様情報を変更しました"
+		user = User.find(params[:id])
+		if user.update(user_params)
+		   redirect_to user_information_path(user.id), notice: "お客様情報を変更しました"
 		else
 		   render 'edit'
 		end
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
 
 	private
 	def user_params
-		params.require(:user).permit(:name, :place, :user_image_id, :gender, :age, :email ,:password ,:password_confirmation)
+		params.require(:user).permit(:name, :place, :user_image_id, :gender, :age, :email ,:password ,:password_confirmation,:introduce)
 	end
 
 	def correct_user

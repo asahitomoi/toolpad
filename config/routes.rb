@@ -24,7 +24,6 @@ Rails.application.routes.draw do
     #   post "add", to: "favorite#create"
     #end
     get 'information', to:'users#information'
-    get 'post', to:'users#post'
     get 'favorite', to:'users#favorite'
   end
 

@@ -45,7 +45,7 @@
         <%= link_to "投稿をマイページに保存する",  post_favorites_path(@post), method: :post, class: "favorite-btn" %>
       <% end %>
     <% else %>
-      <p>投稿を保存するには会員登録が必要です。会員登録は<%= link_to new_user_registration_path do %>こちら<% end %>から</p>
+      <p>投稿を保存するには<%= link_to new_user_session_path do %>ログイン<% end %>が必要です。</p>
     <% end %>
       </div>
 		</div>
@@ -69,7 +69,7 @@
 						<% end %>
 						</tbody>
 					</table>
-			</div>
+			</div><br><br>
 			<div class="clearfix">
 			  <p class="crosshead">作り方</p>
 			  <% @post.recipes.each do |f| %>
@@ -87,13 +87,13 @@
 			   </div>
 			  <% end %>
 			</div>
-		  </div><br>
+		  </div><br><br>
 		  <div class="post_bottom">
 			<div class="tip">
 				<p class="crosshead">作品のコツ・誕生秘話・ひとことなど</p>
 				<%= @post.tip %>
 			</div>
-		  </div><br>
+		  </div><br><br>
          <div class="post_others">
     	 <p class="crosshead">みんなの声</p>
     	 <p><%= @post.comments.count %>件のコメント</p>
@@ -117,7 +117,7 @@
              <% if user_signed_in? %>
               <%= render 'comment'%>
              <% else %>
-              <p>コメントをするには会員登録が必要です。会員登録は<%= link_to new_user_registration_path do %>こちら<% end %>から</p>
+              <p>コメントをするには<%= link_to new_user_session_path do %>ログイン<% end %>が必要です。</p>
              <% end %>
 　　　     </div>
 　　　　</div>

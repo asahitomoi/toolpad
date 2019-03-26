@@ -111,6 +111,9 @@
   color: #494949;
   background: #fffaf4;
   border-left: solid 5px #ffaf58;
+  font-family: serif;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .cross{
@@ -282,12 +285,11 @@
 .add_btn{
   display: inline-block;
   position: relative;
-  width: 200px;
-  padding: 0.8em;
+  padding: 0.4em;
   text-align: center;
   text-decoration: none;
   color: #1B1B1B;
-  background: #fff;
+  background: #e8e8e8;
   border-radius: 30px;
   border:1px solid #a7a7a7;
   transition: transform ease .3s;
@@ -304,7 +306,7 @@
 .introduction{
   background-color:white;
   margin: 30px auto;
-  margin-top: 100px;
+  margin-top: 60px;
   padding: 40px;
   width: 960px;
 }
@@ -326,6 +328,11 @@
 
 .usage{
   margin-left:80px;
+}
+
+.registration{
+  font-size:16px;
+  font-weight: bold;
 }
 
 //post_selfdevise

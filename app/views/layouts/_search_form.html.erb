@@ -8,7 +8,7 @@
   <%# if current_user = @user.admin? %>
      <%#= f.text_field :title_or_tip_or_copy_cont, class: "form-control",placeholder:"キーワード検索" %>
   <%# else %>
-          <%= f.text_field :title_cont, class: "form-control",placeholder:"キーワード検索" %>
+          <%= f.text_field :title_or_copy_or_tip_or_recipes_recipe_or_comments_comment_or_materials_material_cont_any, class: "form-control",placeholder:"キーワード検索" %>
 　<!-- 　<%# end %> -->
 <%= f.submit class: "search_submit"%>
 <% end %>
