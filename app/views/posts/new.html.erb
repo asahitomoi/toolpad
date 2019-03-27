@@ -1,6 +1,7 @@
 <div class="container">
+  <h1>作品を投稿する</h1>
   <div class="post_cont">
-	<h1>作品を投稿する</h1>
+	<%= render 'layouts/error_message', er:@post %>
 	<%= form_for(@post) do |f| %>
 		<div class="post_up">
 			<div class="post_sub">
@@ -11,92 +12,22 @@
 	        	<div class="post_sub">
 	             <%= f.label :post_image_id, "作品の写真"  %><br>
 
-	             <%= f.file_field :post_image_id , class:"getphoto" %><br>
-	        </div>
-<!--
-<img src="" id="preview"> .photo_box: ドラッグできる範囲, #preview: 挿入する画像(この要素をjQueryで増やせば何個でも画像追加できる
-	<input type="file" id="getphoto"> -->
-<!--
-	             <%#= f.hidden_field :image_cache %> -->
+	             <%= f.file_field :post_image_id , id:"main_image" %><br>
 
 
-	             <%#= image_tag @post.post_image_id.url,  id = "preview" %>
-<!-- <script>
-  $(document).ready(function() {
-  $('.mySelect2').select2({
-    maximumSelectionLength: 3,
-	width: 300,
-    placeholder: 'This is my placeholder',
-    allowClear: true  # default: true
-    multiple: true
-  });
-});
-
-
-</script> -->
-<!--
-<%#= f.input :disease, include_blank: '選択して下さい', input_html: {class: 'mySelect2'} %>
- -->
-<!--
-<%#= f.select :disease, include_blank: '選択して下さい', input_html: {class: 'mySelect2'} %> -->
-
-<!--セレクトタブは出る。複数とかjava関係ない  -->
-<div class="post_sub">
-<p><strong>対象となりやすい疾患</strong></p>
-<%= f.select :disease, Post.diseases.keys.to_a, {multiple: true, class: 'mySelect2'} %><br>
-</div>
-<div class="post_sub">
-<p><strong>使うときの状況</strong></p>
-<%= f.select :activity, Post.activities.keys.to_a, {multiple: true, class: 'mySelect2'} %><br>
-</div>
-<!--
-<%#= f.collection_select :activity_id, Activity.all %>
- -->
-<!-- そもそもdiseaseモデルはない
-<%#= f.collection_select :disease,include_blank: false, disease: {multiple: true, class: 'mySelect2'} %> -->
-
-
-<!--いけるけど、enumとかそういうの使ってない
-	             <script>
-    $(function () {
-        $('.select2-2').select2({
-            width: '200px',
-            placeholder: 'Please Select',
-            allowClear: true,
-            // このオプションは、複数選択モードを有効にします。
-            multiple: true
-        });
-    });
-</script>
-<select class="select2-2">
-    <option></option>
-    <optgroup label="Fruit">
-        <option value="apple">Apple</option>
-        <option value="banana">Banana</option>
-        <option value="cherry">Cherry</option>
-        <option value="grape" selected>Grape</option>
-        <option value="lemon">Lemon</option>
-    </optgroup>
-    <optgroup label="Vegetable">
-        <option value="beans">Beans</option>
-        <option value="carrots">Carrots</option>
-        <option value="lettuce">Lettuce</option>
-        <option value="radish">Radish</option>
-        <option value="tomato">Tomato</option>
-    </optgroup>
-</select>
-
- -->
-
-
-	            <!--  <%#= f.input :disease, include_blank: false, input_html: {multiple: true, class: 'mySelect2'} %>
-	             <%#= f.collection_select :disease_id, Disease.all, :id, :disease, :prompt => "選択してください" %>
-	             <%#= select :disease, :tags, tags, { selected: selected_tags }, { multiple: true, name: 'disease[tags]', class: 'form-control js-searchable' } %><br> -->
-	             <%#= select :disease, { selected: selected_tags }, { multiple: true, name: 'disease[tags]', class: 'form-control js-searchable' } %><br>
+					<div class="post_sub">
+					  <p><strong>対象となりやすい疾患</strong></p>
+					     <%= f.select :disease, Post.diseases.keys.to_a, {multiple: true, class: 'mySelect2'} %><br>
+					</div>
+					<div class="post_sub">
+					  <p><strong>使うときの状況</strong></p>
+					     <%= f.select :activity, Post.activities.keys.to_a, {multiple: true, class: 'mySelect2'} %><br>
+					</div>
+					<br>
 	        </div>
 	        <div class="post_right">
 	        	<div class="post_sub">
-	        	 <%= f.label :copy, "作品のキャッチコピー"%><br>
+	        	 <%= f.label :copy, "作品の説明"%><br>
 	        	 <%= f.text_field :copy ,class: "copy_field"%><br>
 	        	</div>
 	           <div class="materials post_sub">
@@ -123,7 +54,7 @@
 	           	  <% end %>
 	           	</div>
 	               <div id="links">
-	                   <%= link_to_add_association "材料欄を追加する", f, :materials ,class: "btn-flat-simple"%><br>
+	                   <%= link_to_add_association "材料欄を追加する", f, :materials ,class: "add_btn"%><br>
 	               </div>
 	           </div>
 
@@ -146,12 +77,12 @@
 	           	    <%= render 'recipe_fields', f: recipe %>
 	           	 <% end %>
 	               <div id="links">
-	                   <%= link_to_add_association "作り方欄を追加する", f, :recipes%><br>
+	                   <%= link_to_add_association "作り方欄を追加する", f, :recipes ,class: "add_btn"%><br>
 	               </div>
 	        </div>
 	      </div>
 	        <div class="tip post_sub">
-	        	 <%= f.label :tip, "ポイント・エピソード・ひとこと" %><br>
+	        	 <%= f.label :tip, "ポイント・生い立ち・ひとこと" %><br>
 	             <%= f.text_field :tip ,class: "tip_field"%><br>
 	        </div>
 	    </div>
@@ -161,33 +92,3 @@
     <% end %>
 </div>
 </div>
-
-
-
-
-<!--
-<script>
-
-
-var file = document.querySelector('#getphoto');
-
-file.onchange = function (){ // 画像を選択したら発火
-	var fileList = file.files;
-	if (file.files[0] == null) {
-		document.querySelector('#preview').src = "";
-	} else {
-		//読み込み
-		var reader = new FileReader();
-		reader.readAsDataURL(fileList[0]);
-
-		//読み込み後
-		reader.onload = function  () {
-			document.querySelector('#preview').src = reader.result; // imgタグのsrc属性にurl指定
-			$('#preview').css("display", "inline-block");
-		};
-	};
-};
-
-
-
-</script> -->

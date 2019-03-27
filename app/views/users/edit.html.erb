@@ -1,6 +1,7 @@
 <div class="container">
   <h1>お客様情報の変更</h1>
-  <table class="table table-size">
+  <%= render 'layouts/error_message', er:@user %>
+  <table class="table" id="info_table">
     <thead>
     	<tr>
     		<th>登録情報</th>
@@ -37,8 +38,12 @@
         	<td>年代</td>
         	<td><%= user.select :age, User.ages.keys, {prompt: '選択してください'}%></td>
         </tr>
+         <tr>
+            <td>ひとこと</td>
+            <td><%= user.text_field :introduce%></td>
+        </tr>
     </tbody>
   </table>
-  <%= user.submit "変更内容を登録する", class:"btn btn-success" ,style:"marigin:0, auto" %>
+  <div class="info_btn"><%= user.submit "変更内容を登録する", class:"btn btn-success" %></div>
 <% end %>
 </div>

@@ -42,15 +42,24 @@
   list-style: none;
 }
 
+.top_act{
+  margin-top:-30px;
+}
+
+.top_dis{
+  margin-top:-67px;
+}
+
 //post_show
 
 .post_title_show{
-  text-align: left;
+  text-align: center;
   text-decoration: none;
 }
 
 .post_top{
-  width:100%;
+  width:670px;
+  margin:10px auto;
 }
 
 .top_left{
@@ -59,8 +68,12 @@
  margin:30px;
 }
 
+.copy{
+  font-size:20px;
+}
+
 .top_right{
- width:420px;
+ width:250px;
  float:left;
  margin:30px;
 }
@@ -74,6 +87,10 @@
   width:150px;
   float:left;
   margin:30px;
+}
+
+.comment_boxes{
+  width:700px;
 }
 
 .comment_date{
@@ -94,6 +111,55 @@
   color: #494949;
   background: #fffaf4;
   border-left: solid 5px #ffaf58;
+  font-family: serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cross{
+  color: white;
+}
+
+  /*padding: 0.3em;
+    color: white;
+    background: #191917;
+    border-left: solid 5px #ffaf58;
+}*/
+
+.post_detail{
+  width:615px;
+  margin:10px auto;
+}
+
+.favorite-btn{
+  display: inline-block;
+  width: 250px;
+  height:30px;
+  line-height: 25px;
+  text-align: center;
+  text-decoration: none;
+  color: #1B1B1B;
+  background:  #f6f7ed;
+  border-radius: 30px;
+  border:1px solid #a7a7a7;
+  float: right;
+}
+
+.delete-btn{
+  float:right;
+  margin-right: 35px;
+}
+
+.comment-btn{
+  display: inline-block;
+  width: 250px;
+  height:30px;
+  text-align: center;
+  text-decoration: none;
+  color: #1B1B1B;
+  background:  #f6f7ed;
+  border-radius: 30px;
+  border:1px solid #a7a7a7;
 }
 
 //post_index
@@ -101,11 +167,13 @@
 .post_image{
   float:left;
   margin:30px;
+  width:200px;
 }
 
 .index_right{
   float:left;
   margin:0px 30px;
+  width:450px;
 }
 
 .post_title{
@@ -115,6 +183,8 @@
 
 .p_title{
   color:#3c8e34;
+  font-size: 30px;
+  font-family: serif;
 }
 
 .post_btn{
@@ -138,9 +208,10 @@
 }
 
 //post_new
+
 .post_cont{
   width:850px;
-  margin:0px auto;
+  margin:70px auto;
 }
 
 .material_field{
@@ -148,7 +219,7 @@
 }
 
 .material_table{
-  width:750px;
+  width:800px;
 }
 
 .td_material{
@@ -159,7 +230,6 @@
 }
 
 .td_material_left{
-  width:120px;
   float:left;
   margin:10px;
   height:20px;
@@ -176,12 +246,12 @@
 }
 
 .title_field{
- width:300px;
+ width:630px;
  height:60px;
 }
 
 .copy_field{
- width:500px;
+ width:630px;
 }
 
 .recipe_field{
@@ -189,7 +259,7 @@
 }
 
 .tip_field{
- width:300px;
+ width:630px;
 }
 
 /*.btn-flat-simple {
@@ -212,6 +282,21 @@
   margin:15px;
 }
 
+.add_btn{
+  display: inline-block;
+  position: relative;
+  padding: 0.4em;
+  text-align: center;
+  text-decoration: none;
+  color: #1B1B1B;
+  background: #e8e8e8;
+  border-radius: 30px;
+  border:1px solid #a7a7a7;
+  transition: transform ease .3s;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
 //post_introduce
 .image_introduce{
   margin-left: 130px;
@@ -221,7 +306,7 @@
 .introduction{
   background-color:white;
   margin: 30px auto;
-  margin-top: 100px;
+  margin-top: 60px;
   padding: 40px;
   width: 960px;
 }
@@ -240,6 +325,23 @@
    margin-top: 10px;
    margin-left: 120px;
 }
+
+.usage{
+  margin-left:80px;
+}
+
+.registration{
+  font-size:16px;
+  font-weight: bold;
+}
+
+.usage_sub{
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: solid;
+  margin-right: 200px;
+}
+
 
 //post_selfdevise
 .ot_text{

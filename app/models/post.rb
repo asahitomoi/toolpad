@@ -10,8 +10,9 @@ class Post < ApplicationRecord
 
 	 has_many :favorites, dependent: :destroy
 
-	 validates :title, presence: true
+	 validates :title, presence: true, length: {maximum: 20}
      validates :recipes, presence: true
+     validates :copy, presence: true, length: {maximum: 50}
 
      def favorited_by?(user)
 	 	favorites.where(user_id: user.id).exists?

@@ -8,9 +8,9 @@
     <nav>
       <div class="slidemenu">
         <ul class="nav navbar-nav navbar-right">
-           <li id="header_item"><%= link_to "マイページ", user_path(current_user.id), class:"glyphicon glyphicon-home home" %></li>
-           <li id="header_item"><%= link_to "作品を投稿する", new_post_path,  class:"glyphicon glyphicon-globe globe"  %></li>
-           <li id="header_item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"glyphicon glyphicon-log-out logout"  %></li>
+           <li id="header_item"><%= link_to "マイページ", user_path(current_user.id), class:"glyphicon glyphicon-home home h_text" %></li>
+           <li id="header_item"><%= link_to "作品を投稿する", new_post_path,  class:"glyphicon glyphicon-globe globe h_text"  %></li>
+           <li id="header_item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"glyphicon glyphicon-log-out logout h_text"  %></li>
       </ul>
       </div>
     </nav>
@@ -18,8 +18,8 @@
       <nav>
         <div class="slidemenu">
           <ul class="nav navbar-nav navbar-right">
-           <li id="header_item"><%= link_to "新規会員登録",new_user_registration_path, class:"glyphicon glyphicon-edit sign_up" %></li>
-           <li id="header_item"><%= link_to "ログイン", new_user_session_path, class:"glyphicon glyphicon-log-in sign_in"  %></li>
+           <li id="header_item"><%= link_to "新規会員登録",new_user_registration_path, class:"glyphicon glyphicon-edit sign_up h_text" %></li>
+           <li id="header_item"><%= link_to "ログイン", new_user_session_path, class:"glyphicon glyphicon-log-in sign_in h_text"  %></li>
          </ul>
       </div>
     </nav>

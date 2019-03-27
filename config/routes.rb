@@ -24,8 +24,8 @@ Rails.application.routes.draw do
     #   post "add", to: "favorite#create"
     #end
     get 'information', to:'users#information'
-    get 'post', to:'users#post'
     get 'favorite', to:'users#favorite'
+    # get 'favorite', to:'users#favorite',as: 'favorite'
   end
 
   get 'search', to: 'posts#search', as: :search

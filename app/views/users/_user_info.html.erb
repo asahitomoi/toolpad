@@ -10,23 +10,22 @@
 		<table>
 			<tr>
 				<td>名前</td>
-		        <td><h4><%= @user.name %></h4></td>
+		        <td  class ="table_info"><h4><%= @user.name %></h4></td>
 	        </tr>
 	        <tr>
 	        	<td>ひとこと</td>
-	        	<td><h4><%= @user.introduce %></h4></td>
-	        </tr>
-	        <tr><td><%= link_to "投稿した作品をみる", user_post_path(@user.id) %></td>
+	        	<td  class ="table_info"><h4><%= @user.introduce %></h4></td>
 	        </tr>
 
-	        <% if @user == current_user ||  current_user.admin %>
+	       <% if user_signed_in? %>
 
-	        <tr><td><%= link_to "保存した作品をみる", user_favorite_path(@user.id) %></td>
-	        </tr>
+	        <% if @user == current_user ||  current_user.admin  %>
+
 	        <tr><td><%= link_to "登録情報の確認・編集",  user_information_path(@user.id) %></td>
 	        </tr>
 
 	        <% end %>
+	       <% end %>
 	    </table>
 	</div>
 </div>

@@ -14,6 +14,7 @@
  -->
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 <!-- select2のために色々やってみた。-->
@@ -21,8 +22,9 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/i18n/ja.js"></script>
-
-
+<!-- フォント -->
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
 
   </head>
 
@@ -31,5 +33,6 @@
     <!--  <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p> -->
     <%= yield %>
+    <%= render 'layouts/footer'%>
   </body>
 </html>
