@@ -10,7 +10,7 @@
 			  <ul class="nav nav-tabs">
 	            <li role="presentation" class="active"><%= link_to "投稿した作品をみる", user_path(@user.id) %></li>
 	            <li role="presentation"><%= link_to "保存した作品をみる", user_favorite_path(@user.id) %></li>
-	            <% if current_user = @user.admin? %>
+	            <% if current_user.admin? %>
 	            <li role="presentation"><%= link_to "会員一覧", users_path %></li>
 	            <% end %>
               </ul>

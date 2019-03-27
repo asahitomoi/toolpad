@@ -17,12 +17,15 @@
 	        	<td  class ="table_info"><h4><%= @user.introduce %></h4></td>
 	        </tr>
 
-	       <% if @user == current_user ||  current_user.admin %>
+	       <% if user_signed_in? %>
+
+	        <% if @user == current_user ||  current_user.admin  %>
 
 	        <tr><td><%= link_to "登録情報の確認・編集",  user_information_path(@user.id) %></td>
 	        </tr>
 
 	        <% end %>
+	       <% end %>
 	    </table>
 	</div>
 </div>

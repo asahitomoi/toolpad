@@ -13,20 +13,16 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@q = Post.ransack(params[:q])
         @posts = @q.result(distinct: true)
-        # @posts = Post.find_by(@user.post_id: post.id)
         @post = @user.posts.page(params[:page]).per(5)
-        # @favorites = @user.favorite_posts
-         # # @posts = Post.all.order(created_at: :desc)
-         # @posts = Post.page(params[:page]).per(5)
 	end
 
 	def favorite
 		@q = Post.ransack(params[:q])
         @posts = @q.result(distinct: true)
         @user = User.find(params[:user_id])
+        # binding.pry
         @favorites = @user.favorite_posts.page(params[:page]).per(5)
         # @posts = Post.all.order(created_at: :desc)
-        # @posts = Post.page(params[:page]).per(5)
 	end
 
 	def index

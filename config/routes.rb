@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     #end
     get 'information', to:'users#information'
     get 'favorite', to:'users#favorite'
+    # get 'favorite', to:'users#favorite',as: 'favorite'
   end
 
   get 'search', to: 'posts#search', as: :search
