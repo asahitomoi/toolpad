@@ -63,7 +63,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
   def after_inactive_sign_up_path_for(resource)
-    new_user_session_path,  notice:"登録ありがとうございます。登録されたメールアドレスにURLを送りました。ご確認してください。"
+    new_user_session_path
   end
 
 end
