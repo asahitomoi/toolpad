@@ -30,6 +30,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+/*header footer*/
 header{
 	background-color: #fba810e6;
 	width: 100%;
@@ -39,7 +41,6 @@ header{
 	color:#331a1a;
   height:30px;
 }
-
 
 footer{
   margin-top:80px;
@@ -56,6 +57,13 @@ hr{
 
 .h_text{
   font-size:18px;
+}
+
+
+@media screen and (max-width: 479px) {
+.h_text {
+   font-size:16px;
+}
 }
 
 #header_item a:hover{
@@ -83,7 +91,7 @@ body {
 .option_back {
 	width:250px;
 	height:30px;
-	background-color:#FFFFDD;
+	/*background-color:#FFFFDD;*/
 }
 
 .option_back:hover    {

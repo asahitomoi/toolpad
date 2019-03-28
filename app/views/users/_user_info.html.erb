@@ -1,4 +1,9 @@
-<div class="user_info clearfix">
+<div class="user_info">
+  <div class="info_image"><%=image_tag 'backred.jpg', :height =>'100px', :width =>'800px'%></div>
+
+
+
+   <div class="info_bottom clearfix">
 	<div class="user_left">
 		<% if @user.user_image_id? %>
 	     <%= image_tag user_image_id.thumb.url %>
@@ -28,4 +33,5 @@
 	       <% end %>
 	    </table>
 	</div>
+  </div>
 </div>
