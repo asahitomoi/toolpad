@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+config.action_mailer.default_url_options = { host: 'http://ec2-13-231-151-201.ap-northeast-1.compute.amazonaws.com/users/sign_in' }
+
 module Toolpad
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
