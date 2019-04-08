@@ -20,9 +20,7 @@ class UsersController < ApplicationController
 		@q = Post.ransack(params[:q])
         @posts = @q.result(distinct: true)
         @user = User.find(params[:user_id])
-        # binding.pry
         @favorites = @user.favorite_posts.page(params[:page]).per(5)
-        # @posts = Post.all.order(created_at: :desc)
 	end
 
 	def index
