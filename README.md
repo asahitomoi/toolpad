@@ -1,24 +1,17 @@
-# README
+# 福祉Toolpad
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+福祉Toolpadとは、何らかの障害や怪我により思うように体を動かせなくなってしまった人が
+日常生活の動作や趣味を自分自身で行えるように補助する道具(自助具)の作り方の共有サイトです。
 
-Things you may want to cover:
+患者さんの家族や周囲の方が、患者さんが生活しやすくなる道具を作り、
+家族や周囲の方の力で患者さんに幸せになって欲しいという思いから作りました。
+専門家の知識を一般の方と気軽に共有できるプラットフォーム作りを目指しました。
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+自助具を疾患別、生活動作別に検索し、作り方を知ることはもちろんのこと、
+自分が作った自助具の作り方を投稿することもできます。
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+体が不自由になった大切な誰かのために何かをしたいと思った時の１つの選択肢として
+福祉toolpadの作品で生活が広がる方が増えると嬉しいです。
